@@ -1,0 +1,8 @@
+subnet,decoys
+dmz_subnet,2718
+user_subnet1,2074
+server_subnet1,2057
+user_subnet2,765
+subnet3,727
+server_subnet,641
+user_subnet,594

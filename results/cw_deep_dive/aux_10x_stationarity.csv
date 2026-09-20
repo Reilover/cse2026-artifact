@@ -1,0 +1,4 @@
+size,steps_1x,steps_10x,prefix_identical_rows,first_diff_row,nodes_1x,nodes_10x,ctrl_1x,ctrl_10x,det_1x,det_10x,scale_nodes,scale_ctrl
+10host,1000,10000,True,,178,1709,133,1263,178,1709,9.6,9.5
+25host,1000,10000,True,,184,1720,139,1290,184,1720,9.35,9.28
+50host,1000,10000,True,,122,968,102,845,122,968,7.93,8.28

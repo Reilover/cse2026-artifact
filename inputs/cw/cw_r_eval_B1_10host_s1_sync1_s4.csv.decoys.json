@@ -1,0 +1,201 @@
+{
+  "schema": "cw-decoy-manifest-01",
+  "source": {
+    "network": "10-host-network.yaml",
+    "graph_name": "V94Eval_B1_10host_s1_sync1_s4",
+    "sync_red_targets": true,
+    "num_episodes": 3
+  },
+  "episodes": {
+    "0": {
+      "count": 11,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "user_subnet",
+          "first_seen_step": 1
+        },
+        {
+          "name": "decoy_04",
+          "subnet": "user_subnet",
+          "first_seen_step": 8
+        },
+        {
+          "name": "decoy_07",
+          "subnet": "server_subnet",
+          "first_seen_step": 13
+        },
+        {
+          "name": "decoy_08",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 18
+        },
+        {
+          "name": "decoy_09",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 27
+        },
+        {
+          "name": "decoy_14",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 36
+        },
+        {
+          "name": "decoy_15",
+          "subnet": "server_subnet",
+          "first_seen_step": 44
+        },
+        {
+          "name": "decoy_16",
+          "subnet": "server_subnet",
+          "first_seen_step": 49
+        },
+        {
+          "name": "decoy_17",
+          "subnet": "user_subnet",
+          "first_seen_step": 56
+        },
+        {
+          "name": "decoy_22",
+          "subnet": "user_subnet",
+          "first_seen_step": 72
+        },
+        {
+          "name": "decoy_26",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 90
+        }
+      ]
+    },
+    "1": {
+      "count": 15,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "user_subnet",
+          "first_seen_step": 0
+        },
+        {
+          "name": "decoy_02",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 2
+        },
+        {
+          "name": "decoy_06",
+          "subnet": "server_subnet",
+          "first_seen_step": 16
+        },
+        {
+          "name": "decoy_07",
+          "subnet": "user_subnet",
+          "first_seen_step": 23
+        },
+        {
+          "name": "decoy_09",
+          "subnet": "user_subnet",
+          "first_seen_step": 27
+        },
+        {
+          "name": "decoy_10",
+          "subnet": "user_subnet",
+          "first_seen_step": 30
+        },
+        {
+          "name": "decoy_11",
+          "subnet": "server_subnet",
+          "first_seen_step": 34
+        },
+        {
+          "name": "decoy_15",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 42
+        },
+        {
+          "name": "decoy_19",
+          "subnet": "user_subnet",
+          "first_seen_step": 60
+        },
+        {
+          "name": "decoy_21",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 67
+        },
+        {
+          "name": "decoy_22",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 71
+        },
+        {
+          "name": "decoy_23",
+          "subnet": "user_subnet",
+          "first_seen_step": 81
+        },
+        {
+          "name": "decoy_25",
+          "subnet": "server_subnet",
+          "first_seen_step": 86
+        },
+        {
+          "name": "decoy_27",
+          "subnet": "user_subnet",
+          "first_seen_step": 91
+        },
+        {
+          "name": "decoy_29",
+          "subnet": "server_subnet",
+          "first_seen_step": 95
+        }
+      ]
+    },
+    "2": {
+      "count": 9,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "server_subnet",
+          "first_seen_step": 1
+        },
+        {
+          "name": "decoy_07",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 16
+        },
+        {
+          "name": "decoy_12",
+          "subnet": "server_subnet",
+          "first_seen_step": 30
+        },
+        {
+          "name": "decoy_14",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 34
+        },
+        {
+          "name": "decoy_22",
+          "subnet": "server_subnet",
+          "first_seen_step": 57
+        },
+        {
+          "name": "decoy_23",
+          "subnet": "server_subnet",
+          "first_seen_step": 63
+        },
+        {
+          "name": "decoy_25",
+          "subnet": "user_subnet",
+          "first_seen_step": 74
+        },
+        {
+          "name": "decoy_26",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 78
+        },
+        {
+          "name": "decoy_33",
+          "subnet": "server_subnet",
+          "first_seen_step": 96
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2021 @@
+meta:
+  environment: CAGE4
+  scenario: Enterprise_seed45
+  node_count: 86
+  subnet_count: 9
+  has_blue_agent: true
+  has_green_agent: true
+  multi_agent_count: 5
+  seed: 45
+hosts:
+  restricted_zone_a_subnet_router:
+    type: firewall
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.152
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_0:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.52
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_1:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.225
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_2:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.140
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_3:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.14
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_4:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.146
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_5:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.34
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_6:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.51
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_7:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.15
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_user_host_8:
+    type: workstation
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.143
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_0:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_1:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_2:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.252
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_3:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.251
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_4:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.250
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_a_subnet_server_host_5:
+    type: server
+    subnet: restricted_zone_a_subnet
+    ip: 10.0.166.249
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_router:
+    type: firewall
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.115
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_0:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.157
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_1:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.133
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_2:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.222
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_3:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.233
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_4:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.216
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_user_host_5:
+    type: workstation
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.48
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_a_subnet_server_host_0:
+    type: server
+    subnet: operational_zone_a_subnet
+    ip: 10.0.165.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_router:
+    type: firewall
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.4
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_0:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.99
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_1:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.185
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_2:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.161
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_3:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.204
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_4:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.15
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_5:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.206
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_user_host_6:
+    type: workstation
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.239
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_server_host_0:
+    type: server
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_server_host_1:
+    type: server
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  restricted_zone_b_subnet_server_host_2:
+    type: server
+    subnet: restricted_zone_b_subnet
+    ip: 10.0.9.252
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_router:
+    type: firewall
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.82
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  operational_zone_b_subnet_user_host_0:
+    type: workstation
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.173
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_user_host_1:
+    type: workstation
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.134
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_user_host_2:
+    type: workstation
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.223
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_user_host_3:
+    type: workstation
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.95
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_server_host_0:
+    type: server
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_server_host_1:
+    type: server
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_server_host_2:
+    type: server
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.252
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  operational_zone_b_subnet_server_host_3:
+    type: server
+    subnet: operational_zone_b_subnet
+    ip: 10.0.223.251
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_router:
+    type: firewall
+    subnet: contractor_network_subnet
+    ip: 10.0.106.88
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  contractor_network_subnet_user_host_0:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.33
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_1:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.57
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_2:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.252
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_3:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.186
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_4:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.216
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_5:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.117
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_6:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.238
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_user_host_7:
+    type: workstation
+    subnet: contractor_network_subnet
+    ip: 10.0.106.8
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_server_host_0:
+    type: server
+    subnet: contractor_network_subnet
+    ip: 10.0.106.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_server_host_1:
+    type: server
+    subnet: contractor_network_subnet
+    ip: 10.0.106.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  contractor_network_subnet_server_host_2:
+    type: server
+    subnet: contractor_network_subnet
+    ip: 10.0.106.251
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_router:
+    type: firewall
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.152
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_0:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.109
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_1:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.247
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_2:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.246
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_3:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.141
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_4:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.201
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_user_host_5:
+    type: workstation
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.9
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  public_access_zone_subnet_server_host_0:
+    type: server
+    subnet: public_access_zone_subnet
+    ip: 10.0.178.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_router:
+    type: firewall
+    subnet: admin_network_subnet
+    ip: 10.0.54.127
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  admin_network_subnet_user_host_0:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.92
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_1:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.3
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_2:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.251
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_3:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.116
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_4:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.254
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_5:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.241
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_6:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.88
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_user_host_7:
+    type: workstation
+    subnet: admin_network_subnet
+    ip: 10.0.54.33
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_server_host_0:
+    type: server
+    subnet: admin_network_subnet
+    ip: 10.0.54.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_server_host_1:
+    type: server
+    subnet: admin_network_subnet
+    ip: 10.0.54.252
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  admin_network_subnet_server_host_2:
+    type: server
+    subnet: admin_network_subnet
+    ip: 10.0.54.250
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_router:
+    type: firewall
+    subnet: office_network_subnet
+    ip: 10.0.87.8
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+  office_network_subnet_user_host_0:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.202
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_user_host_1:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.99
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_user_host_2:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.4
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_user_host_3:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.204
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_user_host_4:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.161
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_user_host_5:
+    type: workstation
+    subnet: office_network_subnet
+    ip: 10.0.87.74
+    os: unknown
+    asset_value: 1
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_server_host_0:
+    type: server
+    subnet: office_network_subnet
+    ip: 10.0.87.254
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  office_network_subnet_server_host_1:
+    type: server
+    subnet: office_network_subnet
+    ip: 10.0.87.253
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: ''
+    type_source: from_pattern
+  root_internet_host_0:
+    type: firewall
+    subnet: unknown
+    ip: 10.0.74.184
+    os: unknown
+    asset_value: 3
+    is_decoy: false
+    role: router
+    type_source: from_pattern
+subnets:
+  restricted_zone_a_subnet:
+    cidr: 10.0.166.0/24
+    type: IT
+    cidr_source: from_config
+  operational_zone_a_subnet:
+    cidr: 10.0.165.0/24
+    type: OT
+    cidr_source: from_config
+  restricted_zone_b_subnet:
+    cidr: 10.0.9.0/24
+    type: IT
+    cidr_source: from_config
+  operational_zone_b_subnet:
+    cidr: 10.0.223.0/24
+    type: OT
+    cidr_source: from_config
+  contractor_network_subnet:
+    cidr: 10.0.106.0/24
+    type: DMZ
+    cidr_source: from_config
+  public_access_zone_subnet:
+    cidr: 10.0.178.0/24
+    type: DMZ
+    cidr_source: from_config
+  admin_network_subnet:
+    cidr: 10.0.54.0/24
+    type: IT
+    cidr_source: from_config
+  office_network_subnet:
+    cidr: 10.0.87.0/24
+    type: IT
+    cidr_source: from_config
+  internet_subnet:
+    cidr: 10.0.74.0/24
+    type: DMZ
+    cidr_source: from_config
+interfaces:
+  restricted_zone_a_subnet_router:
+    connects_to:
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_4
+    - office_network_subnet_router
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_router
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_server_host_1
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_3
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_b_subnet_router
+    - contractor_network_subnet_router
+  restricted_zone_a_subnet_user_host_0:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_1:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_2:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_3:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_4:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_5:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_6:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_7:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_user_host_8:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_0:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_1:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_2:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_3:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_4:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_5
+    - restricted_zone_a_subnet_router
+  restricted_zone_a_subnet_server_host_5:
+    connects_to:
+    - restricted_zone_a_subnet_router
+    - restricted_zone_a_subnet_user_host_0
+    - restricted_zone_a_subnet_user_host_1
+    - restricted_zone_a_subnet_user_host_2
+    - restricted_zone_a_subnet_user_host_3
+    - restricted_zone_a_subnet_user_host_4
+    - restricted_zone_a_subnet_user_host_5
+    - restricted_zone_a_subnet_user_host_6
+    - restricted_zone_a_subnet_user_host_7
+    - restricted_zone_a_subnet_user_host_8
+    - restricted_zone_a_subnet_server_host_0
+    - restricted_zone_a_subnet_server_host_1
+    - restricted_zone_a_subnet_server_host_2
+    - restricted_zone_a_subnet_server_host_3
+    - restricted_zone_a_subnet_server_host_4
+    - restricted_zone_a_subnet_router
+  operational_zone_a_subnet_router:
+    connects_to:
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - restricted_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_user_host_4
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_router
+    - restricted_zone_b_subnet_router
+    - office_network_subnet_router
+    - contractor_network_subnet_router
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_5
+  operational_zone_a_subnet_user_host_0:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_user_host_1:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_user_host_2:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_user_host_3:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_user_host_4:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_user_host_5:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_server_host_0
+    - operational_zone_a_subnet_router
+  operational_zone_a_subnet_server_host_0:
+    connects_to:
+    - operational_zone_a_subnet_router
+    - operational_zone_a_subnet_user_host_0
+    - operational_zone_a_subnet_user_host_1
+    - operational_zone_a_subnet_user_host_2
+    - operational_zone_a_subnet_user_host_3
+    - operational_zone_a_subnet_user_host_4
+    - operational_zone_a_subnet_user_host_5
+    - operational_zone_a_subnet_router
+  restricted_zone_b_subnet_router:
+    connects_to:
+    - restricted_zone_b_subnet_user_host_1
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - operational_zone_a_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_a_subnet_router
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_5
+    - public_access_zone_subnet_router
+    - restricted_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_router
+    - office_network_subnet_router
+    - contractor_network_subnet_router
+  restricted_zone_b_subnet_user_host_0:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_1:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_2:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_3:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_4:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_5:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_user_host_6:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_server_host_0:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_server_host_1:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  restricted_zone_b_subnet_server_host_2:
+    connects_to:
+    - restricted_zone_b_subnet_router
+    - restricted_zone_b_subnet_user_host_0
+    - restricted_zone_b_subnet_user_host_1
+    - restricted_zone_b_subnet_user_host_2
+    - restricted_zone_b_subnet_user_host_3
+    - restricted_zone_b_subnet_user_host_4
+    - restricted_zone_b_subnet_user_host_5
+    - restricted_zone_b_subnet_user_host_6
+    - restricted_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_server_host_1
+    - restricted_zone_b_subnet_router
+  operational_zone_b_subnet_router:
+    connects_to:
+    - operational_zone_b_subnet_server_host_2
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_3
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_server_host_0
+    - restricted_zone_b_subnet_router
+    - office_network_subnet_router
+    - contractor_network_subnet_router
+  operational_zone_b_subnet_user_host_0:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_user_host_1:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_user_host_2:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_user_host_3:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_server_host_0:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_server_host_1:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_server_host_2:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_3
+    - operational_zone_b_subnet_router
+  operational_zone_b_subnet_server_host_3:
+    connects_to:
+    - operational_zone_b_subnet_router
+    - operational_zone_b_subnet_user_host_0
+    - operational_zone_b_subnet_user_host_1
+    - operational_zone_b_subnet_user_host_2
+    - operational_zone_b_subnet_user_host_3
+    - operational_zone_b_subnet_server_host_0
+    - operational_zone_b_subnet_server_host_1
+    - operational_zone_b_subnet_server_host_2
+    - operational_zone_b_subnet_router
+  contractor_network_subnet_router:
+    connects_to:
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_user_host_7
+    - office_network_subnet_router
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_1
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_router
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_0
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_server_host_2
+    - restricted_zone_b_subnet_router
+  contractor_network_subnet_user_host_0:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_1:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_2:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_3:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_4:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_5:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_6:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_user_host_7:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_server_host_0:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_server_host_1:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_2
+    - contractor_network_subnet_router
+  contractor_network_subnet_server_host_2:
+    connects_to:
+    - contractor_network_subnet_router
+    - contractor_network_subnet_user_host_0
+    - contractor_network_subnet_user_host_1
+    - contractor_network_subnet_user_host_2
+    - contractor_network_subnet_user_host_3
+    - contractor_network_subnet_user_host_4
+    - contractor_network_subnet_user_host_5
+    - contractor_network_subnet_user_host_6
+    - contractor_network_subnet_user_host_7
+    - contractor_network_subnet_server_host_0
+    - contractor_network_subnet_server_host_1
+    - contractor_network_subnet_router
+  public_access_zone_subnet_router:
+    connects_to:
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_4
+    - operational_zone_b_subnet_router
+    - restricted_zone_b_subnet_router
+    - public_access_zone_subnet_user_host_5
+    - office_network_subnet_router
+    - contractor_network_subnet_router
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+  public_access_zone_subnet_user_host_0:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_user_host_1:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_user_host_2:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_user_host_3:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_user_host_4:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_user_host_5:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_server_host_0
+    - public_access_zone_subnet_router
+  public_access_zone_subnet_server_host_0:
+    connects_to:
+    - public_access_zone_subnet_router
+    - public_access_zone_subnet_user_host_0
+    - public_access_zone_subnet_user_host_1
+    - public_access_zone_subnet_user_host_2
+    - public_access_zone_subnet_user_host_3
+    - public_access_zone_subnet_user_host_4
+    - public_access_zone_subnet_user_host_5
+    - public_access_zone_subnet_router
+  admin_network_subnet_router:
+    connects_to:
+    - office_network_subnet_router
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_2
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_router
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_5
+    - root_internet_host_0
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_user_host_6
+    - restricted_zone_b_subnet_router
+    - contractor_network_subnet_router
+  admin_network_subnet_user_host_0:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_1:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_2:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_3:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_4:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_5:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_6:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_user_host_7:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_server_host_0:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_server_host_1:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_2
+    - admin_network_subnet_router
+  admin_network_subnet_server_host_2:
+    connects_to:
+    - admin_network_subnet_router
+    - admin_network_subnet_user_host_0
+    - admin_network_subnet_user_host_1
+    - admin_network_subnet_user_host_2
+    - admin_network_subnet_user_host_3
+    - admin_network_subnet_user_host_4
+    - admin_network_subnet_user_host_5
+    - admin_network_subnet_user_host_6
+    - admin_network_subnet_user_host_7
+    - admin_network_subnet_server_host_0
+    - admin_network_subnet_server_host_1
+    - admin_network_subnet_router
+  office_network_subnet_router:
+    connects_to:
+    - admin_network_subnet_router
+    - root_internet_host_0
+    - office_network_subnet_user_host_1
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - office_network_subnet_user_host_2
+    - restricted_zone_b_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_server_host_1
+    - public_access_zone_subnet_router
+    - office_network_subnet_user_host_4
+    - operational_zone_b_subnet_router
+    - office_network_subnet_user_host_3
+    - contractor_network_subnet_router
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+  office_network_subnet_user_host_0:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_user_host_1:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_user_host_2:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_user_host_3:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_user_host_4:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_user_host_5:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_server_host_0
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_server_host_0:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_1
+    - office_network_subnet_router
+  office_network_subnet_server_host_1:
+    connects_to:
+    - office_network_subnet_router
+    - office_network_subnet_user_host_0
+    - office_network_subnet_user_host_1
+    - office_network_subnet_user_host_2
+    - office_network_subnet_user_host_3
+    - office_network_subnet_user_host_4
+    - office_network_subnet_user_host_5
+    - office_network_subnet_server_host_0
+    - office_network_subnet_router
+  root_internet_host_0:
+    connects_to:
+    - admin_network_subnet_router
+    - operational_zone_a_subnet_router
+    - restricted_zone_a_subnet_router
+    - public_access_zone_subnet_router
+    - operational_zone_b_subnet_router
+    - restricted_zone_b_subnet_router
+    - office_network_subnet_router
+    - contractor_network_subnet_router
+topology_source: dynamic_generator
+connectivity_source: subnet_level
+firewall_presence: node_based
+notes:
+- Dynamic topology from EnterpriseScenarioGenerator (seed=45)
+- 5 blue agents, multi-agent MARL environment
+- 'Host types inferred from naming pattern: *_router, *_user_host_*, *_server_host_*'
+- Green agents simulate normal user behavior

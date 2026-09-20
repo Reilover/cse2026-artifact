@@ -1,0 +1,281 @@
+hosts:
+  dmz0:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: web_server
+  dmz1:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: mail_server
+  dmz2:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: data_server
+  dmz3:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: proxy_server
+  dmz4:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: file_server
+  dmz5:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: ssh_jump_server
+  dmz6:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: workstation
+  dmz7:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: workstation
+  dmz8:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: workstation
+  dmz9:
+    firewall:
+    routes:
+    subnet: dmz_subnet
+    type: workstation
+  host0:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host1:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host10:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host11:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host12:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host13:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host14:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host15:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host16:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host17:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host18:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host19:
+    firewall:
+    routes:
+    subnet: user_subnet2
+    type: workstation
+  host2:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host3:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host4:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host5:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host6:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host7:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host8:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  host9:
+    firewall:
+    routes:
+    subnet: user_subnet1
+    type: workstation
+  server0:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: proxy_server
+  server1:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: mail_server
+  server2:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: ssh_jump_server
+  server3:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: ssh_jump_server
+  server4:
+    firewall:
+    routes:
+    subnet: server_subnet     
+    type: proxy_server
+  server5:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: mail_server
+  server6:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: file_server
+  server7:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: ssh_jump_server
+  server8:
+    firewall:
+    routes:
+    subnet: server_subnet
+    type: data_server
+  server9:
+    firewall:
+    routes:
+    subnet: server_subnet 
+    type: web_server
+  
+interfaces:
+  dmz1:
+  - server9
+  host19:
+  - dmz4
+  host4:
+  - dmz2
+network:
+  desc: default description
+  name: 40-host-network
+routers:
+  core_router:
+    default_route:
+    firewall:
+    routes:
+    routes_by_name:
+subnets:
+  dmz_subnet:
+    firewall:
+    ip_range: 192.168.4.0/24
+    router: core_router
+  server_subnet:
+    firewall:
+    ip_range: 192.168.1.0/24
+    router: core_router
+  user_subnet1:
+    firewall:
+    ip_range: 192.168.0.0/24
+    router: core_router
+  user_subnet2:
+    firewall:
+    ip_range: 192.168.2.0/24
+    router: core_router
+topology:
+  core_router:
+    dmz_subnet:
+    - dmz0
+    - dmz1
+    - dmz2
+    - dmz3
+    - dmz4
+    - dmz5
+    - dmz6
+    - dmz7
+    - dmz8
+    - dmz9
+    server_subnet:
+    - server0
+    - server1
+    - server2
+    - server3
+    - server4
+    - server5
+    - server6
+    - server7
+    - server8
+    - server9
+    user_subnet1:
+    - host0
+    - host1
+    - host2
+    - host3
+    - host4
+    - host5
+    - host6
+    - host7
+    - host8
+    - host9
+    user_subnet2:
+    - host10
+    - host11
+    - host12
+    - host13
+    - host14
+    - host15
+    - host16
+    - host17
+    - host18
+    - host19

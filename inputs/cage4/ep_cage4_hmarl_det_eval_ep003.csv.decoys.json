@@ -1,0 +1,108 @@
+{
+ "schema": "cw-decoy-manifest-02",
+ "environment": "CAGE4",
+ "generated_by": "cage4_variant_export.py (F3)",
+ "decoy_lifetime_model": "permanent (DeployDecoy.duration=2 是执行 tick 数，非寿命)",
+ "episodes": {
+  "ep_cage4_hmarl_det_eval_ep003": {
+   "decoys": [
+    {
+     "name": "admin_network_subnet_user_host_4",
+     "first_seen_step": 2,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_a_subnet_user_host_5",
+     "first_seen_step": 2,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_b_subnet_server_host_2",
+     "first_seen_step": 2,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_server_host_1",
+     "first_seen_step": 2,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_a_subnet_user_host_3",
+     "first_seen_step": 6,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "admin_network_subnet_user_host_0",
+     "first_seen_step": 8,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_a_subnet_user_host_8",
+     "first_seen_step": 8,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_a_subnet_user_host_4",
+     "first_seen_step": 12,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_b_subnet_user_host_2",
+     "first_seen_step": 20,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "admin_network_subnet_server_host_0",
+     "first_seen_step": 28,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_a_subnet_server_host_0",
+     "first_seen_step": 35,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "admin_network_subnet_user_host_6",
+     "first_seen_step": 39,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_6",
+     "first_seen_step": 107,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_a_subnet_user_host_1",
+     "first_seen_step": 287,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_2",
+     "first_seen_step": 348,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_a_subnet_user_host_0",
+     "first_seen_step": 481,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,6 @@
+corpus,files,rows,pct_in_runs_ge100,longest_run
+art_train(1x),150,150000,87.4,976
+art_10x(10x),15,150000,48.3,5033
+rl_10x(10x),30,300000,0.0,8
+v9.5 ART eval,30,9000,0.0,76
+v9.5 RL eval,270,81000,0.0,22

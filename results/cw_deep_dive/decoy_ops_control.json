@@ -1,0 +1,6 @@
+{
+ "source": "/home/xxl/MyExperiments/E4ACD/data/cw_retrain",
+ "cells": 180,
+ "intervals": 9576,
+ "note": "逐诱饵存活区间需要第二代语料（remove_decoy 行含被移除诱饵名）"
+}

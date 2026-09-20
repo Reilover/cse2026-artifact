@@ -1,0 +1,84 @@
+{
+ "schema": "cw-decoy-manifest-02",
+ "environment": "CAGE4",
+ "generated_by": "cage4_variant_export.py (F3)",
+ "decoy_lifetime_model": "permanent (DeployDecoy.duration=2 是执行 tick 数，非寿命)",
+ "episodes": {
+  "ep_cage4_gnn_ppo_det_eval_ep002": {
+   "decoys": [
+    {
+     "name": "operational_zone_b_subnet_server_host_3",
+     "first_seen_step": 91,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_b_subnet_user_host_1",
+     "first_seen_step": 135,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_5",
+     "first_seen_step": 170,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_4",
+     "first_seen_step": 172,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_0",
+     "first_seen_step": 174,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_8",
+     "first_seen_step": 184,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_1",
+     "first_seen_step": 186,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_user_host_6",
+     "first_seen_step": 192,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_server_host_1",
+     "first_seen_step": 240,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_server_host_3",
+     "first_seen_step": 278,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "restricted_zone_b_subnet_server_host_4",
+     "first_seen_step": 294,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    },
+    {
+     "name": "operational_zone_b_subnet_server_host_2",
+     "first_seen_step": 467,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    }
+   ]
+  }
+ }
+}

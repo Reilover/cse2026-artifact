@@ -1,0 +1,68 @@
+# action_vocab.yaml — 由 episode_adapter.py 的权威映射**派生**（v9.4 / R9）
+#
+# 背景：v9 报告 §2 声称"各环境原生动作经适配器映射为统一 kill-chain 动作集"。
+# 实测 45 单元中 4 个（C4-GNN/C4-GNN-Det/C4-HMARL/C4-HMARL-Det）违反该断言：
+# 其 action 列是 **CAGE4 原生名的下划线形式**（如 exploit_remote_service），
+# 而 `episode_adapter.CAGE4_RED_MAP` 的键是**驼峰形式**（ExploitRemoteService），
+# 因此当年导出这些语料时映射未命中 → 动作名原样落地。
+#
+# 本表**不是新发明**，而是从既有权威映射派生（含驼峰/下划线/全小写三种键形），
+# 保证与 episode_adapter.py 一致。派生脚本：tools/rev9_4/derive_action_vocab.py
+#
+# 处置（批复 D2-(b)）：`metrics_table.csv` 保留 `action` 原列（证据），
+# 新增 `action_unified` 列（归一化视图）。数值不受影响（dc/di/da 基于资产值）。
+version: action-vocab-02
+date: '2026-09-15'
+derived_from:
+  file: episode_adapter.py
+  symbols:
+  - CAGE4_RED_MAP
+  note: 本表由既有权威映射派生，不得独立编辑；改动请改 episode_adapter.py 后重新派生（见 tools/rev9_4/derive_action_vocab.py）
+unified_set:
+- pingsweep
+- portscan
+- discovery
+- exploit
+- lateral-movement
+- privilege-escalation
+- impact
+- sleep
+aliases:
+  AggressiveServiceDiscovery: portscan
+  DegradeServices: impact
+  DiscoverDeception: discovery
+  DiscoverNetworkServices: portscan
+  DiscoverRemoteSystems: pingsweep
+  ExploitRemoteService: exploit
+  Impact: impact
+  PrivilegeEscalate: privilege-escalation
+  Sleep: sleep
+  StealthServiceDiscovery: discovery
+  aggressive_service_discovery: portscan
+  aggressiveservicediscovery: portscan
+  degrade_services: impact
+  degradeservices: impact
+  discover_deception: discovery
+  discover_network_services: portscan
+  discover_remote_systems: pingsweep
+  discoverdeception: discovery
+  discovernetworkservices: portscan
+  discoverremotesystems: pingsweep
+  discovery: discovery
+  exploit: exploit
+  exploit_remote_service: exploit
+  exploitremoteservice: exploit
+  impact: impact
+  lateral-movement: lateral-movement
+  nothing: nothing
+  pingsweep: pingsweep
+  portscan: portscan
+  privilege-escalation: privilege-escalation
+  privilege_escalate: privilege-escalation
+  privilegeescalate: privilege-escalation
+  sleep: sleep
+  stealth_service_discovery: discovery
+  stealthservicediscovery: discovery
+policy:
+  unknown_action: identity
+  report_unknown: true

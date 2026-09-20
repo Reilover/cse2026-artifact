@@ -1,0 +1,16 @@
+size,eval_seed,identical,rows_sync0,rows_sync1,first_divergent_step
+10host,1,True,300,300,
+10host,2,True,300,300,
+10host,3,True,300,300,
+10host,4,True,300,300,
+10host,5,True,300,300,
+25host,1,True,300,300,
+25host,2,True,300,300,
+25host,3,False,300,300,82
+25host,4,True,300,300,
+25host,5,True,300,300,
+50host,1,True,300,300,
+50host,2,True,300,300,
+50host,3,True,300,300,
+50host,4,True,300,300,
+50host,5,True,300,300,

@@ -1,0 +1,18 @@
+{
+ "schema": "cw-decoy-manifest-02",
+ "environment": "CAGE4",
+ "generated_by": "cage4_rl_trainer.py (F3)",
+ "decoy_lifetime_model": "permanent (DeployDecoy.duration=2 是执行 tick 数，非寿命)",
+ "episodes": {
+  "ep_cage4_sleep_rl_train_ep001": {
+   "decoys": [
+    {
+     "name": "admin_network_subnet_user_host_5",
+     "first_seen_step": 10,
+     "removed_step": null,
+     "source": "blue_deploy_decoy_success"
+    }
+   ]
+  }
+ }
+}

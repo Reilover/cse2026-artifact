@@ -1,0 +1,96 @@
+{
+  "schema": "cw-decoy-manifest-01",
+  "source": {
+    "network": "50-host-network.yaml",
+    "graph_name": "AUXArtEval_50host_sync1_s2",
+    "sync_red_targets": true,
+    "num_episodes": 3
+  },
+  "episodes": {
+    "0": {
+      "count": 3,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 81
+        },
+        {
+          "name": "decoy_02",
+          "subnet": "user_subnet1",
+          "first_seen_step": 86
+        },
+        {
+          "name": "decoy_03",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 97
+        }
+      ]
+    },
+    "1": {
+      "count": 4,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 21
+        },
+        {
+          "name": "decoy_02",
+          "subnet": "user_subnet1",
+          "first_seen_step": 29
+        },
+        {
+          "name": "decoy_03",
+          "subnet": "subnet3",
+          "first_seen_step": 71
+        },
+        {
+          "name": "decoy_04",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 98
+        }
+      ]
+    },
+    "2": {
+      "count": 7,
+      "decoys": [
+        {
+          "name": "decoy_01",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 2
+        },
+        {
+          "name": "decoy_02",
+          "subnet": "user_subnet1",
+          "first_seen_step": 11
+        },
+        {
+          "name": "decoy_03",
+          "subnet": "server_subnet1",
+          "first_seen_step": 42
+        },
+        {
+          "name": "decoy_04",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 55
+        },
+        {
+          "name": "decoy_05",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 84
+        },
+        {
+          "name": "decoy_06",
+          "subnet": "dmz_subnet",
+          "first_seen_step": 86
+        },
+        {
+          "name": "decoy_07",
+          "subnet": "user_subnet2",
+          "first_seen_step": 88
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+step,action,action_unified,source,target,node_control_rate,subnet_control_rate,node_alive_detection_rate,node_info_detection_rate,node_vulnerability_detection_rate,node_detect_rate,total_control_time,node_failure_rate,subnet_failure_rate,horizontal_control_range,vertical_control_range,control_scope,behavior_concealment,network_concealment,lateral_movement_ratio,comprehensive_concealment_score,control_value_total,control_value_controlled,dc_score,di_score,da_score,d_score
+15,discovery,discovery,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+16,discovery,discovery,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+17,discovery,discovery,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+18,discovery,discovery,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+19,discovery,discovery,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+20,Withdraw,Withdraw,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+21,Withdraw,Withdraw,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+22,Withdraw,Withdraw,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+23,Withdraw,Withdraw,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024
+24,Withdraw,Withdraw,Red,contractor_network_subnet_user_host_5,0.0,0.0,0.0,0.0,0.0125,0.0125,0,0.0,0.0,0,0,0.0,1.0,1.0,0.0,1.0,148,0,0.0068,0.0,0.0,0.0024

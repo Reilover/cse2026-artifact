@@ -1,0 +1,92 @@
+# success_semantics.yaml — 红方动作 success 字段语义注册表（WP2.3）
+# 版本: v8 | 依据: fix_plan_success_integration.md §3.2 / methodology_review_red_success.md
+# 取证方式: 源码行级审读 + 实测分布（2026-07 重训语料）
+# 用途: wxpgzs 评估管线 confirmed_* 双口径指标的语义基础
+
+registry:
+  cage1:
+    env: CybORG Scenario1 (cage-challenge-1, external_envs/CybORG)
+    semantic_class: real          # real=执行结果 | attempt=尝试 | proxy=间接代理 | broken=损坏
+    source: "Results.observation.data['success'] (TrinaryEnum: TRUE=1/UNKNOWN=2/FALSE=3)"
+    extractor: train_all.py c1_extract (经 Cage1GymEnv.step 保存 _last_red_success)
+    measured_true_ratio: "MSFPortscan 全 TRUE; exploit 类视目标可达性; Sleep=UNKNOWN"
+    confidence: high
+    notes: "原实现读 ec.action('Red').success 属性——Action 对象无该属性 → 恒 FALSE，已修复"
+
+  cage2:
+    env: CybORG Scenario2b (CybORG++ Debugged, external_envs/CybORG_plus_plus)
+    semantic_class: real
+    source: "get_observation('Red')['success'] (TrinaryEnum, 同上枚举值)"
+    extractor: train_all.py c2_extract
+    measured_true_ratio: "0.927 (Meander 红方实测 278 TRUE / 22 FALSE / 300 步)"
+    confidence: high
+    notes: "旧口径用 float(r.get('Red',0))>0——Meander 红方奖励恒 0 → 恒 FALSE(broken)，已修复为 Observation 读数"
+
+  cage4:
+    env: CAGE Challenge 4 (cage-challenge-4, PettingZoo)
+    semantic_class: real          # 2026-07-20 A2 修复后升级
+    source: "cyborg.get_observation(red_agent_i).data['success'] (TernaryEnum TRUE=1/UNKNOWN=2/FALSE=3/IN_PROGRESS=4)"
+    extractor: cage4_variant_export.py obs_success()；CAGE4-RL 基线单元（DF/FS/RS）仍为 attempt 口径（cage4_rl_trainer.py 红方 unified!=sleep）
+    measured_true_ratio: "HMARL 变体实测 0.465 (232 TRUE/267 FALSE)；gnn 待重导出复测"
+    confidence: high
+    notes: >
+      恒 FALSE 根因：wrapped PettingZoo observations 无红方 agent 键（实测 None），
+      原 act_name 读 action.success 属性——Action 对象无该属性。修复：改从 cyborg
+      对象直接取红方 Observation 读 data['success']。注意 C4-DF/FS/RS 单元（RL 训练
+      基线）红方 success 为 attempt 口径，与变体单元（GNN/HMARL）的 real 口径不同代际，
+      跨组对比时需注明。
+
+  cw:
+    env: Cyberwheel (external_envs/cyberwheel)
+    semantic_class: real
+    source: "red_agent_result.success (RedActionReturn)"
+    extractor: cyberwheel rl_handler / art_handler CSV 导出
+    measured_true_ratio: "RL≈0.79 (37 TRUE/10 FALSE); ART≈1.0 (恒 TRUE)"
+    confidence: high
+    notes: >
+      RL 蓝方 deploy_decoy 的 FALSE 为蓝方动作语义（诱饵未创建确认），
+      不影响红方 success 口径；WP1.4 将为蓝方增加独立 decoy_confirmed 字段。
+
+  yt:
+    env: Yawning Titan (external_envs/Yawning-Titan)
+    semantic_class: attempt_proxy  # 状态差分近似：exploit 且目标节点状态改变
+    source: "red_act=='exploit' and any(a=='exploit' for a,_ in changed_nodes)"
+    extractor: train_all.py yt_extract
+    measured_true_ratio: "0.146 (874 FALSE / 150 TRUE, v8 重训语料)"
+    confidence: medium
+    notes: "旧口径仅判断动作类型（exploit 即 TRUE）→ 高估；已修复为状态差分"
+
+  idsgame:
+    env: gym-idsgame (minimal_defense)
+    semantic_class: proxy_detected  # rews[0]<0 即未被发现 → TRUE
+    source: "rews[0] < 0"
+    extractor: train_all.py id_extract
+    measured_true_ratio: "0.689 (706 TRUE / 318 FALSE, v8 重训语料)"
+    confidence: medium
+    notes: "proxy 语义：TRUE=未触发检测，非动作执行成功；跨环境对比时需注明"
+
+  nasim:
+    env: NASim (tiny benchmark)
+    semantic_class: attempt        # 恒 TRUE
+    source: "True (硬编码)"
+    extractor: train_all.py na_extract
+    measured_true_ratio: "1.000"
+    confidence: low
+    notes: "attempt 口径：仅表示动作已发出；confirmed_* 指标对 NASim 无区分度（注册表标注）"
+
+confirmed_metrics:
+  definition: |
+    confirmed_* = 原口径集合与 success==TRUE 子集的交集。
+    UNKNOWN 视为未确认（不进入 confirmed 集合）。
+  outputs:
+    - confirmed_controlled            # 非蜜罐且 success==TRUE 的受控节点数
+    - confirmed_lateral_movement_count
+    - confirmed_attacks_to_honey
+  per_env_usability:
+    cage1: full        # real 语义
+    cage2: full
+    cage4: disabled    # broken，修复前不输出 confirmed
+    cw: full
+    yt: partial        # attempt_proxy，confirmed 偏保守
+    idsgame: partial   # proxy_detected，confirmed≠执行成功
+    nasim: disabled    # attempt 恒 TRUE，无区分度

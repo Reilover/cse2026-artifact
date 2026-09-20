@@ -1,0 +1,933 @@
+{
+  "total_steps": 10,
+  "step_metrics": [
+    {
+      "step": 15,
+      "action": "discovery",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 1,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 16,
+      "action": "discovery",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 2,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 17,
+      "action": "discovery",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 3,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 18,
+      "action": "discovery",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 4,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 19,
+      "action": "discovery",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 5,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 20,
+      "action": "Withdraw",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 6,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 21,
+      "action": "Withdraw",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 7,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 22,
+      "action": "Withdraw",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 8,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 23,
+      "action": "Withdraw",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 9,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    },
+    {
+      "step": 24,
+      "action": "Withdraw",
+      "source": "Red",
+      "target": "contractor_network_subnet_user_host_5",
+      "metrics": {
+        "node_control_rate": 0.0,
+        "subnet_control_rate": 0.0,
+        "node_alive_detection_rate": 0.0,
+        "node_info_detection_rate": 0.0,
+        "node_vulnerability_detection_rate": 0.0125,
+        "node_detect_rate": 0.0125,
+        "total_control_time": 0,
+        "lateral_movement_propagation": {
+          "ratio": 0.0,
+          "assessment": "未发生横向传播"
+        },
+        "behavior_concealment": 1.0,
+        "network_concealment": 1.0,
+        "comprehensive_concealment": {
+          "comprehensive_score": 1.0,
+          "behavior_contribution": 0.5,
+          "network_contribution": 0.5,
+          "assessment": "高隐蔽"
+        },
+        "control_value": {
+          "total_asset_value": 148,
+          "controlled_asset_value": 0,
+          "assessment": "极低"
+        },
+        "node_failure_rate": 0.0,
+        "subnet_failure_rate": 0.0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "control_scope": 0.0,
+        "confidentiality_damage": {
+          "dc_score": 0.0068,
+          "dc_level": 1,
+          "dc_affected_asset_value": 1,
+          "total_asset_value": 148,
+          "assessment": "轻微破坏"
+        },
+        "integrity_damage": {
+          "di_score": 0.0,
+          "di_level": 0,
+          "di_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "availability_damage": {
+          "da_score": 0.0,
+          "da_level": 0,
+          "da_affected_asset_value": 0,
+          "total_asset_value": 148,
+          "assessment": "无破坏"
+        },
+        "comprehensive_damage": {
+          "d_score": 0.0024,
+          "d_level": 0,
+          "dc_contribution": 0.0024,
+          "di_contribution": 0.0,
+          "da_contribution": 0.0,
+          "assessment": "几乎无破坏"
+        }
+      },
+      "statistics": {
+        "controlled_devices": 0,
+        "non_honey_controlled": 0,
+        "controlled_subnets": 0,
+        "alive_detected_nodes": 0,
+        "info_detected_nodes": 0,
+        "vulnerability_detected_nodes": 1,
+        "all_detected_nodes": 1,
+        "pingsweep_count": 0,
+        "portscan_count": 0,
+        "lateral_movement_count": 0,
+        "honey_lateral_movement_count": 0,
+        "non_honey_lateral_movement_count": 0,
+        "detection_count": 0,
+        "failed_nodes": 0,
+        "failed_subnets": 0,
+        "horizontal_control_range": 0,
+        "vertical_control_range": 0,
+        "total_attacks": 10,
+        "attacks_to_honey": 0,
+        "controlled_honey_count": 0,
+        "confirmed_controlled": 0,
+        "confirmed_lateral_movement_count": 0,
+        "confirmed_attacks_to_honey": 0
+      }
+    }
+  ],
+  "red_nonsleep_rows": 10,
+  "unrecognized_action_rows": 5,
+  "unrecognized_action_names": {
+    "Withdraw": 5
+  },
+  "dispatch_actions": [
+    "discovery",
+    "exploit",
+    "impact",
+    "lateral-movement",
+    "pingsweep",
+    "portscan",
+    "privilege-escalation"
+  ],
+  "label_source": "regex",
+  "authoritative_honey_count": 0,
+  "authoritative_decoy_interval_count": 0,
+  "interval_source": "regex"
+}

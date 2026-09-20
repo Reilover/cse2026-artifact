@@ -1,0 +1,7 @@
+arm,window,steps,top1,top2,top3
+A,early,180000,remove_decoy=74.1%,sleep=15.5%,deploy_decoy=10.4%
+A,late,180000,remove_decoy=74.7%,sleep=25.2%,deploy_decoy=0.0%
+B1,early,180000,remove_decoy=56.8%,deploy_decoy=28.6%,sleep=14.5%
+B1,late,180000,remove_decoy=58.2%,deploy_decoy=25.1%,sleep=16.7%
+B2,early,180000,remove_decoy=57.1%,deploy_decoy=28.4%,sleep=14.5%
+B2,late,180000,remove_decoy=61.2%,deploy_decoy=21.1%,sleep=17.8%

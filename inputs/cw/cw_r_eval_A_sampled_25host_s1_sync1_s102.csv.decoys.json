@@ -1,0 +1,21 @@
+{
+  "schema": "cw-decoy-manifest-01",
+  "source": {
+    "network": "25-host-network.yaml",
+    "graph_name": "SupplementEXP1_A_sampled_25host_s1_sync1_s102",
+    "sync_red_targets": true,
+    "num_episodes": 1,
+    "seed": 102,
+    "num_steps": 100,
+    "cyberwheel_commit": "067072e",
+    "runner": "data/cw_supplement/tools/cw_rollout_runner.py",
+    "sampling": "categorical-softmax-T1.0 (masked)",
+    "checkpoint_experiment": "V94_RetrainA_25host_s1"
+  },
+  "episodes": {
+    "0": {
+      "count": 0,
+      "decoys": []
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "cw-decoy-manifest-01",
+  "source": {
+    "network": "10-host-network.yaml",
+    "graph_name": "V94Eval_A_10host_s2_sync0_s1",
+    "sync_red_targets": false,
+    "num_episodes": 3
+  },
+  "episodes": {
+    "0": {
+      "count": 0,
+      "decoys": []
+    },
+    "1": {
+      "count": 0,
+      "decoys": []
+    },
+    "2": {
+      "count": 0,
+      "decoys": []
+    }
+  }
+}

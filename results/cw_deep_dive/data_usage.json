@@ -1,0 +1,14 @@
+{
+ "train_files": 2700,
+ "train_rows": 2700000,
+ "train_vals": 32400000,
+ "diag_rows": 2700,
+ "diag_vals": 35100,
+ "eval_cells": 900,
+ "eval_rows": 90000,
+ "eval_vals": 1170000,
+ "metrics_rows": 810,
+ "metrics_vals": 21870,
+ "manifest_recs": 9576,
+ "manifest_vals": 28728
+}
