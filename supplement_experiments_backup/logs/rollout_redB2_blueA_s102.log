@@ -1,0 +1,9 @@
+[cross] red=B2 blue=A seed=102 steps=100 sync=1 exp=V94_Cross_redB2_blueA
+Using device cpu
+Building network: 25-host-network.yaml ...
+  0%|          | 0/1 [00:00<?, ?it/s]Building Routers:   0%|          | 0/1 [00:00<?, ?it/s]Building Routers: core_router:   0%|          | 0/1 [00:00<?, ?it/s]Building Routers: core_router: 100%|██████████| 1/1 [00:00<00:00, 7898.88it/s]
+  0%|          | 0/3 [00:00<?, ?it/s]Building Subnets:   0%|          | 0/3 [00:00<?, ?it/s]Building Subnets: dmz_subnet:   0%|          | 0/3 [00:00<?, ?it/s]Building Subnets: server_subnet1:   0%|          | 0/3 [00:00<?, ?it/s]Building Subnets: user_subnet1:   0%|          | 0/3 [00:00<?, ?it/s]  Building Subnets: user_subnet1: 100%|██████████| 3/3 [00:00<00:00, 4004.75it/s]
+  0%|          | 0/25 [00:00<?, ?it/s]Building Hosts:   0%|          | 0/25 [00:00<?, ?it/s]Building Hosts:  88%|████████▊ | 22/25 [00:00<00:00, 219.66it/s]Building Hosts: 100%|██████████| 25/25 [00:00<00:00, 219.44it/s]
+Mapping attack validity to hosts... done
+[cross] env+models ready in 0.2s (agents=['red', 'blue'], red_rl=True)
+[cross] DONE cw_r_cross_redB2_blueA_25host_s1_sync1_s102.csv decoys=0 red_hit_steps=0 wall=0.2s

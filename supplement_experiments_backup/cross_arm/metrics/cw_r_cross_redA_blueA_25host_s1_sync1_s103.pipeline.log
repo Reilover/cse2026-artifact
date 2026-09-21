@@ -1,0 +1,16 @@
+Preprocessing complete, result saved to /home/xxl/MyExperiments/E4ACD/data/cw_supplement/cross_arm/metrics/cw_r_cross_redA_blueA_25host_s1_sync1_s103/_processed.json
+Total nodes: 25
+Host nodes: 8
+Honeypot nodes: 0
+DMZ nodes: 7
+Server nodes: 10
+Subnets: 3
+Linked list generated, saved to /home/xxl/MyExperiments/E4ACD/data/cw_supplement/cross_arm/metrics/cw_r_cross_redA_blueA_25host_s1_sync1_s103/_process_linked_list.json
+Total steps: 100
+Action type stats: {'discovery': 34, 'pingsweep': 21, 'portscan': 23, 'lateral-movement': 19, 'nothing': 3}
+
+[✓] Evaluation complete!
+    File: cw_r_cross_redA_blueA_25host_s1_sync1_s103
+    Total steps: 100
+    Elapsed: 0.03s
+    Table: /home/xxl/MyExperiments/E4ACD/data/cw_supplement/cross_arm/metrics/cw_r_cross_redA_blueA_25host_s1_sync1_s103/metrics_table.csv

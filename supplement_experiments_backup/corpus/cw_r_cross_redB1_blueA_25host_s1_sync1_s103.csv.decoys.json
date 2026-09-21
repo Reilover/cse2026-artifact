@@ -1,0 +1,21 @@
+{
+  "schema": "cw-decoy-manifest-01",
+  "source": {
+    "network": "25-host-network.yaml",
+    "graph_name": "V94Cross_redB1_blueA_s103",
+    "sync_red_targets": true,
+    "num_episodes": 1,
+    "seed": 103,
+    "num_steps": 100,
+    "red_checkpoint": "V94_RetrainB1_25host_s1/red_agent.pt",
+    "blue_checkpoint": "V94_RetrainA_25host_s1/blue_agent.pt",
+    "checkpoint_experiment": "V94_Cross_redB1_blueA",
+    "runner": "data/cw_supplement/cross_arm/tools/cross_rollout_runner.py"
+  },
+  "episodes": {
+    "0": {
+      "count": 0,
+      "decoys": []
+    }
+  }
+}

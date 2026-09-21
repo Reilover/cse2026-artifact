@@ -1,0 +1,11 @@
+{
+  "red_arm": "B2",
+  "blue_arm": "B2",
+  "csv": "/home/xxl/MyExperiments/E4ACD/data/cw_supplement/cross_arm/corpus/cw_r_cross_redB2_blueB2_25host_s1_sync1_s103.csv",
+  "seed": 103,
+  "num_steps": 100,
+  "sync_red_targets": true,
+  "wall_sec": 0.2,
+  "decoy_unique": 22,
+  "red_hit_steps_inproc": 4
+}
