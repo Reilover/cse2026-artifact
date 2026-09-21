@@ -853,11 +853,19 @@ def calculate_step_metrics(processed_data, linked_list_data):
     #     total_control_time / concealment 三式（蜜罐交互=暴露红方，语义正确）。
     honey_names = get_authoritative_honey() | set(_AUTHORITATIVE_INTERVALS.keys())
     if honey_names:
+        # 修复（2026-09-20）：双重扣减——CW 的 decoy_NN 在 pre_process 已被
+        # DECOY_PATTERN 正确分类为蜜罐并从 non_honey_node_count 剔除；
+        # 此处再用 honey_names 扣减会导致分母双重缩小 ⇒ 率列失真。
+        # 修复：只扣减 pre_process 未覆盖的"额外蜜罐"（CAGE4 企业命名诱饵），
+        # 即名字不匹配 DECOY_PATTERN/HONEY_PATTERN 的蜜罐。
+        extra_honey = {n for n in honey_names
+                       if not DECOY_PATTERN.match(n) and not HONEY_PATTERN.match(n)}
         _corpus_nodes = {str(k).strip().lower()
                          for k in processed_data.get('asset_values', {})}
-        non_honey_total = max(0, non_honey_total - len(honey_names & _corpus_nodes))
-        asset_values = {k: v for k, v in asset_values.items()
-                        if str(k).strip().lower() not in honey_names}
+        if extra_honey:
+            non_honey_total = max(0, non_honey_total - len(extra_honey & _corpus_nodes))
+            asset_values = {k: v for k, v in asset_values.items()
+                            if str(k).strip().lower() not in extra_honey}
 
     node_table = processed_data.get('node_table', [])
     # F1 修复: 构建 node_type_map 用于增强蜜罐识别
