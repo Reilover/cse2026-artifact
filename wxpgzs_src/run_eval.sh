@@ -1,4 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# ============================================================
+# Network Security Threat Assessment System - batch evaluation
+# Usage: bash run_eval.sh   (from wxpgzs_src/)
+# Evaluates the corpora under ../inputs per the topology-binding
+# rules in rerun_eval_v9.py; outputs to ../result_test/.
+# ============================================================
+# (原始中文说明保留如下 / original Chinese notes below)
 # ============================================================
 #  网络安全威胁评估系统 - Linux/macOS 批量评估启动脚本
 #
