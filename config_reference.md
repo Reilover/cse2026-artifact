@@ -29,9 +29,9 @@ CW-{blue-arm}{topology-scale}{phase-suffix}
 
 | Arm | Full name | Meaning | Training-phase decoys |
 |---|---|---|---|
-| **A** | ART | scripted blue agent, threshold-based auto deployment | deployable |
+| **A** | sync-off | RL blue agent, trained with the red agent's observation loop disconnected (legacy condition); deployment decays to zero by training episodes 14--22 | deployable (decays to 0) |
 | **B1** | RL + baseline reward | RL blue agent, reward = `reward_decoy_hits` (upstream default) | deployable |
-| **B2** | RL + penalty variant | RL blue agent, reward = `reward_decoy_hits_penalized` (extra −10 per decoy strike) | deployable |
+| **B2** | RL + penalty variant | RL blue agent, co-trained with red-reward variant `reward_decoy_hits_penalized` (each successful decoy strike: −10 to the red agent's environment reward) | deployable |
 
 ### 2.3 Topology scales
 
