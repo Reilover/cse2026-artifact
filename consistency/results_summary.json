@@ -1,7 +1,7 @@
 {
  "_meta": {
   "repo": "/home/kali/Mypaper/cse2026/anon_repo_v2",
-  "generated": "2026-11-25 13:03:40",
+  "generated": "2026-11-25 14:59:30",
   "pipeline": true,
   "t3_episodes": 810
  },
@@ -19650,6 +19650,11 @@
     "B1": 0.060000000000000005,
     "B2": 0.05
    },
+   "strike_basis": "share of all logged red steps whose target lies in the per-episode decoy manifest (any-target); mean of five episodes per pair",
+   "strike_b1_range": [
+    0.048,
+    0.060000000000000005
+   ],
    "armA_deploys_all": true,
    "n": 45
   },

@@ -262,6 +262,8 @@ N['crossarm'] = {'col_range_red': max(max(Dmean[(r_, b)] for r_ in ARMS) - min(D
                  'row_range_blue': max(max(Dmean[(r_, b)] for b in ARMS) - min(Dmean[(r_, b)] for b in ARMS) for r_ in ARMS),
                  'offdiag': mean([Dmean[(r_, b)] for r_ in ARMS for b in ARMS if r_ != b]), 'diag': mean([Dmean[(r_, r_)] for r_ in ARMS]),
                  'strike_max': {r_: max(mean(x) for (rr, b), x in S.items() if rr == r_) for r_ in ARMS},
+                 'strike_basis': 'share of all logged red steps whose target lies in the per-episode decoy manifest (any-target); mean of five episodes per pair',
+                 'strike_b1_range': (min(mean(S[('B1', b)]) for b in ('B1', 'B2')), max(mean(S[('B1', b)]) for b in ('B1', 'B2'))),
                  'armA_deploys_all': all(x == 0 for (r_, b), v in dep.items() if b == 'A' for x in v), 'n': len(ca)}
 N['sources']['crossarm'] = 'supplement_experiments_backup/cross_arm/per_episode.csv (45 episodes)'
 # v9 md anchors

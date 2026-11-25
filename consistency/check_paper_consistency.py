@@ -120,7 +120,7 @@ print('L1 Table 2 (configuration counts)')
 rt = sum(T4[u]['episodes'] for u in T4 if u.startswith('CW-RT')); at = sum(T4[u]['episodes'] for u in T4 if u.startswith('CW-AT'))
 xrt = sum(T4[u]['episodes'] for u in T4 if u.startswith('CWX-RT')); xat = sum(T4[u]['episodes'] for u in T4 if u.startswith('CWX-AT'))
 t2 = N['t2']; matched = 0
-EXPECT = {('CW eval (RL / scripted)', -1): '%d / %d' % (t2['cw_eval_rl'], t2['cw_eval_art']), ('CW train / long', -1): '%d/%d; %d/%d' % (rt, at, xrt, xat),
+EXPECT = {('CW eval (RL / scripted)', -1): '%d / %d' % (t2['cw_eval_rl'], t2['cw_eval_art']), ('CW train / long', -1): '%d/%d (train); %d/%d (long)' % (rt, at, xrt, xat),
           ('CW sampled', -1): '%d' % t2['cw_sampled'], ('CW variants', -1): '%d' % t2['cw_variants'], ('CAGE4', -1): '%d' % t2['cage4'],
           ('CW eval (RL / scripted)', 1): '10/25/50 h', ('CW variants', 4): '10{,}000 steps', ('CAGE4', 1): ('%s--%s h' % mc4.groups()) if mc4 else '92--101 h'}
 for row in rows_of(table_block('tab:setup')):
@@ -173,7 +173,7 @@ T('abstract D learned', '($D = %s$--$%s$)' % rng([T5[x]['d_score']['mean'] for x
 T('abstract D contractor', '($D = %s$--$%s$; about $10\\times$ under a common horizon)' % rng([T5[x]['d_score']['mean'] for x in CONTRACTOR], 3))
 sb1 = rng(list(N['strike_b1'].values()), 1); sb2 = rng(list(N['strike_b2'].values()), 1)
 T('abstract strike B1', '$%s$--$%s\\%%$ of core attacks' % sb1); T('abstract strike B2', 'cuts this to $%s$--$%s\\%%$' % sb2)
-T('abstract paired', 'raises red-agent damage by $%s$--$%s\\%%$ in 45/45 paired sampled-action episodes' % rng([N['paired']['GNN'], N['paired']['HMARL']], 0))
+T('abstract paired', 'red-agent damage is $%s$--$%s\\%%$ lower in 45/45 paired sampled-action episodes' % rng([N['paired']['GNN'], N['paired']['HMARL']], 0))
 T('episodes per cell', '45 episodes per cell, 810 in total'); T('cross-arm episodes', 'under sync-on (45 episodes)')
 T('ART episodes', '15 episodes per scale'); T('B1 train episodes', '300 arm-B1 episodes'); T('ART train episodes', '50 ART-defender episodes')
 W = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six'}
@@ -181,7 +181,7 @@ T('subnets', 'across %s to %s subnets' % (W[min(N['cw_subnets'].values())], W[ma
 T('CAGE4 hosts', 'roughly %s--%s hosts across %s subnets' % (mc4.group(1), mc4.group(2), {9: 'nine', 8: 'eight', 10: 'ten'}.get(N['cage4_subnets'][0], str(N['cage4_subnets'][0]))))
 T('CAGE4 episodes', 'evaluate 21 episodes from CAGE Challenge 4')
 T('grid', '231 admissible weightings'); T('gap', 'minimum between-group gap $%s$' % fmt(N['simplex_cage4']['min_gap'], 2)); T('tau', 'Kendall $\\tau \\geq %s$' % fmt(N['simplex_cage4']['min_tau'], 2))
-T('box', 'within $[0.15, 0.55]$'); T('flip', 'availability share $\\geq 0.6$'); T('H degenerate', '$H = 1.000$')
+T('box', 'within $[0.15, 0.55]$'); T('flip', 'availability share $\\geq 0.6$'); T('H degenerate', '$H = 1.0$ under every weighting')
 fl = N['flag']
 T('flag ART', 'is $%d\\%%$ for Cyberwheel ART' % int(fmt(fl['cw_art_eval'], 0)))
 T('flag CAGE4 contractor', '$%s$--$%s\\%%$ for the CAGE4 contractor episodes with scripted red' % rng(fl['cage4_contractor'], 0))
@@ -191,7 +191,10 @@ sp = S['_spearman']; rho = sp['rho']
 T('spearman recipe', 'all 810 episodes of the 54 arm--scale--seed--sync configurations')
 T('spearman median', 'median Spearman $\\rho = %s$ over the %d recomputable indicators' % (fmt(sp['median'], 2), sp['n_defined']))
 T('spearman composites', '$\\rho = %s$ for the concealment composite, $%s$ for $D$' % (fmt(rho['comprehensive_concealment_score'], 2), fmt(rho['d_score'], 2)))
-T('spearman sensitive', '$\\rho = %s$ for node control, $%s$ for control value' % (fmt(rho['node_control_rate'], 2), fmt(rho['control_value'], 2)))
+T('spearman sensitive', '$\\rho = %s$ for node control, $%s$ for control value and integrity damage, $-%s$ for total control time' % (fmt(rho['node_control_rate'], 2), fmt(rho['control_value'], 2), fmt(abs(rho['total_control_time']), 2)))
+IC = ('node_alive_detection_rate', 'node_info_detection_rate', 'node_vulnerability_detection_rate', 'node_detect_rate')   # the four Information Collection indicators of Table 1
+T('spearman information collection', r'and so are the Information Collection detection rates ($\rho \geq %s$)' % fmt(min(rho[k] for k in IC), 2))
+chk('L3', all(rho[k] >= 0.6 for k in IC) and abs(rho['di_score'] - rho['control_value']) < 1e-9, 'rank-sensitivity wording facts: Information Collection min rho %.3f / DI %.3f vs control value %.3f' % (min(rho[k] for k in IC), rho['di_score'], rho['control_value']))
 T('flag denominator', '(share of red actions except sleep and subnet scans flagged successful)')
 T('spearman conclusion', r'so all-action counting changes individual readings but leaves the damage-based patterns of Table~\ref{tab:results} intact: the 25-host peak everywhere and the arm ordering $B1 < A < B2$ at 50 hosts.')
 T('spearman recipe wording', r'), recomputed with the shipped pipeline from successful actions only, yields')
@@ -231,10 +234,10 @@ P = N['paired']
 T('absorb', '$%s\\%%$ to $%s\\%%$ of attack steps land on decoys' % (fmt(float(P['absorb_lo']), 1), fmt(float(P['absorb_hi']), 1)))
 T('conceal per-episode', '$%s$--$%s$ across episodes' % rng([e['comprehensive_concealment_score'] for x in LEARNED for e in E[x]['eps']], 3))
 T('paired pct', '$%s\\%%$ (GNN-PPO) and $%s\\%%$ (H-MARL)' % (fmt(P['GNN'], 1), fmt(P['HMARL'], 1)))
-T('paired consistent', 'consistent in 45/45 paired episodes'); T('resamples', '20{,}000 resamples'); T('p', '$p < 0.001$')
+T('paired consistent', 'consistent in 45/45 episode pairs per variant'); T('resamples', '20{,}000 resamples'); T('p', '$p < 0.001$')
 def psig(p): return '$p < 0.001$' if p < 0.001 else '$p < 0.01$' if p < 0.01 else '$p < 0.05$' if p < 0.05 else 'not significant'
-T('det effects', 'under deterministic policies the effect attenuates ($-%s\\%%$ for H-MARL-det, $%d/%d$ consistent, %s; $-%s\\%%$ for GNN-PPO-det, %s)' % (fmt(P['HMARL-Det']['pct'], 1), P['HMARL-Det']['consistent'], P['HMARL-Det']['n'], psig(P['HMARL-Det']['p_holm']), fmt(P['GNN-Det']['pct'], 1), psig(P['GNN-Det']['p_holm'])))
-T('abstract det variants', '(deterministic variants: $-%s\\%%$ and $-%s\\%%$)' % (fmt(P['HMARL-Det']['pct'], 1), fmt(P['GNN-Det']['pct'], 1)))
+T('det effects', 'under deterministic policies the effect attenuates ($%s\\%%$ for H-MARL-det, $%d/%d$ consistent, %s; $%s\\%%$ for GNN-PPO-det, %s)' % (fmt(P['HMARL-Det']['pct'], 1), P['HMARL-Det']['consistent'], P['HMARL-Det']['n'], psig(P['HMARL-Det']['p_holm']), fmt(P['GNN-Det']['pct'], 1), psig(P['GNN-Det']['p_holm'])))
+T('abstract det variants', '(deterministic variants: $%s\\%%$ and $%s\\%%$)' % (fmt(P['HMARL-Det']['pct'], 1), fmt(P['GNN-Det']['pct'], 1)))
 T('det decoys', 'GNN-PPO-det deploys roughly six times fewer decoys than its sampled counterpart ($%s$ vs.\\ $%s$ per episode)' % tuple(P['decoy_det_per_ep']))
 chk('L3', 5.5 <= float(P['decoy_det_per_ep'][1]) / float(P['decoy_det_per_ep'][0]) < 6.5, 'paired experiment decoy ratio is not about six: %s' % P['decoy_det_per_ep'])
 T('decoys paired', '$%s$ vs.\\ $%s$ per episode' % tuple(P['decoy_det_per_ep']))
@@ -244,21 +247,22 @@ T('cut+damage', 'the $%s$--$%s\\%%$ engagement cut at sustained real-host damage
 off = N['official']
 def _k(x): return format(round(abs(x)), ',').replace(',', '{,}')
 T('official', '$-%s$/$-%s$ for GNN-PPO/H-MARL, $-%s$/$-%s$' % (round(abs(off['GNN-PPO'])), _k(off['H-MARL']), _k(off['GNN-PPO-det']), _k(off['H-MARL-det'])))
+T('scalar cannot surface', 'a divergence the scalar score itself does not show.'); T('score naming', "The challenge's blue-reward score and the damage-oriented indicator profile")
 T('point estimates', '($%s$ vs.\\ $%s$, $%s$ vs.\\ $%s$)' % tuple(fmt(T5[x]['d_score']['mean'], 3) for x in ('GNN-PPO', 'H-MARL', 'GNN-PPO-det', 'H-MARL-det')))
 fc = [x for xname in LEARNED + CONTRACTOR for x in E[xname]['first_compromise'] if x is not None]
 T('first compromise', '$%d$--$%d$ steps' % (min(fc), max(fc)))
 samp = ['GNN-PPO', 'H-MARL']; detv = ['GNN-PPO-det', 'H-MARL-det']
 T('conceal gap', '($%s$--$%s$ vs.\\ $%s$--$%s$)' % (rng([T5[x]['comprehensive_concealment_score']['mean'] for x in samp], 2) + rng([T5[x]['comprehensive_concealment_score']['mean'] for x in detv], 2)))
 T('paired lower', 'damage $%s$--$%s\\%%$ lower with decoys on' % rng([P['GNN'], P['HMARL']], 0))
-T('further cut', '(a further $%s$--$%s\\%%$ cut, redirected toward real hosts on two of three topologies)' % cut())
-T('cross-arm strike', '(red-B1 up to $%s\\%%$; red-A $%s\\%%$' % (fmt(ca['strike_max']['B1'] * 100, 1), fmt(ca['strike_max']['A'] * 100, 1)))
+T('further cut', '(a further $%s$--$%s\\%%$ cut, with a significant shift toward real hosts on two of three topologies)' % cut())
+T('cross-arm strike', 'carry their strike rates across blue partners (share of all logged steps, five episodes per pair: red-B1 $%s$--$%s\\%%$; red-A $%s\\%%$' % (fmt(ca['strike_b1_range'][0] * 100, 1), fmt(ca['strike_b1_range'][1] * 100, 1), fmt(ca['strike_max']['A'] * 100, 1)))
 T('kill chain', 'projecting the kill-chain stages of Hutchins et al.')
 T('distinct quantities', 'only the first duplicates a quantity, so the system covers 20 distinct quantities')
-T('supplements', 'Two supplements probe robustness: a sampled-action variant of the arm-A red agent ($%d$ episodes) and %s parameter variants of the ART script against arm~B1.' % (t2['cw_sampled'], 'ten' if t2['cw_variants'] == 10 else str(t2['cw_variants'])))
+T('supplementary corpora', 'A sampled-action variant of the arm-A red agent adds five episodes.'); T('ART variants', 'in ten script variants, against arm~B1.')
 T('antecedent', 'Both the spread and the horizon gap are reward-shaped---they read out')
 T('peak wording', 'falls below it at 50 hosts')
 T('limitation term', r'the all-action versus success-only comparison (Section~\ref{sec:setup}) is run only on the Cyberwheel corpus')
-T('dependencies', 'a short Python program (standard library plus PyYAML; Matplotlib only for the optional charts) and is deterministic')
+T('dependencies', 'needs only the standard library plus PyYAML (Matplotlib only for the optional charts) and is deterministic')
 _wsrc = os.path.join(A.repo, 'wxpgzs_src'); _std = set(sys.stdlib_module_names); _top = set(); _opt = set()
 _local = {os.path.splitext(f)[0] for f in os.listdir(_wsrc) if f.endswith('.py')}
 for _fn in sorted(f for f in os.listdir(_wsrc) if f.endswith('.py')):
@@ -267,8 +271,27 @@ for _fn in sorted(f for f in os.listdir(_wsrc) if f.endswith('.py')):
         if _m: (_opt if _m.group(1) else _top).add(_m.group(2))
 _third_top = {x for x in _top if x not in _std and x not in _local}; _third_opt = {x for x in _opt if x not in _std and x not in _local}
 chk('L3', _third_top == {'yaml'} and _third_opt <= {'yaml', 'matplotlib', 'numpy'}, 'dependency claim (standard library + PyYAML; Matplotlib for charts) no longer matches the pipeline imports: %s / %s' % (_third_top, _third_opt))
-for _bad in ('no significant effect', 'core actions flagged', 'robust to small weight perturbations', '7-kill-chain', 'confirmed-metric dual reading', 'stops deploying decoys entirely', 'Both components are reward-shaped', 'drops at 50 hosts', 'preserves the comparative orderings', 'inflates individual readings', 'uses only the Python standard library'):
+for _bad in ('no significant effect', 'core actions flagged', 'robust to small weight perturbations', '7-kill-chain', 'confirmed-metric dual reading', 'stops deploying decoys entirely', 'Both components are reward-shaped', 'drops at 50 hosts', 'preserves the comparative orderings', 'inflates individual readings', 'uses only the Python standard library', 'control- and value-type indicators are convention-sensitive', 'minimal disruption', 'distinct strike profiles everywhere', 'redirected toward real hosts', 'is a short Python program', 'decoy-strike share', 'realized impairment', 'do not depend on the weighting choice', 'no scalar score can surface', 'The official score', 'every red checkpoint with every blue checkpoint', 'byte-identical to its 1,000-step prefix', '$H = 1.000$ under'):
     chk('L3', _bad not in tex, 'stale wording still present: %r' % _bad)
+T('contractor objective (abstract)', 'than those optimized for minimal attacker presence ($D = 0.018$--$0.049$')
+T('contractor objective (conclusion)', 'than those optimized for minimal attacker presence, and')
+T('contractor objective (5.3)', 'early termination under presence-minimizing rewards, long engagement tolerance under service-continuity rewards')
+T('contractor objective (intro)', 'aggressive decoy deployment under one reward, minimal attacker presence under another')
+T('sync-on deployment arms', 'Under sync-on, the connected arms B1/B2 deploy decoys')
+T('ART attribution', 'Its decoy engagement, moreover, demands careful attribution')
+T('CIA wording', 'The three CIA components each track impairment-related activity, but')
+T('weighting claim (4.1)', 'the configuration separations are robust to the weighting choice')
+T('H precision', 'sit at the degenerate $H = 1.0$ under every weighting.')
+T('Eq. 2 cardinalities', r'\chi_d = \frac{|O_d|}{N_d}'); T('control range names', r'where the horizontal control range $s_h$ is'); T('Table 5 header', r'\textbf{Node Failure} & \textbf{Damage}')
+T('CIA expanded', 'the three CIA (confidentiality, integrity, availability) damage components')
+T('cross-arm design', 'pairs the seed-1 red checkpoints with the seed-1 blue checkpoints of all arms')
+_asi = N['art_sync_identity']; _n = len(_asi); _k = sum(1 for r in _asi if str(r.get('identical')) == 'True')
+T('ART sync identity', 'byte-identical under both synchronization states in %d of %d episode pairs' % (_k, _n))
+chk('L3', _n == 15, 'ART sync-identity table has %d rows, expected 15' % _n)
+T('long-horizon wording', 'each 10,000-step ART episode replays the 1,000-step script (on five episodes per scale)')
+T('paired sample', 'beyond the three episodes of Table~\\ref{tab:cage4}; sign-flip permutation test')
+_ns = sum(1 for p in N['redirect_p_real'].values() if p < 0.05)
+chk('L3', _ns == 2, 'redirection is significant on %d of three topologies, wording says two' % _ns)
 missing = [(l, s) for l, s in trip if s not in tex]
 for l, s in missing: chk('L3', False, 'tripwire "%s" not found: %s' % (l, s))
 ok['L3'] += len(trip) - len(missing)
