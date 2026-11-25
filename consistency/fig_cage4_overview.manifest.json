@@ -1,0 +1,13 @@
+{
+ "source": "vision transcription of figures/fig_cage4_overview.png (2026-11-25); left-panel bar labels, right panel carries no numeric labels",
+ "left_labels": {
+  "RL baseline (B-line)": "0.049",
+  "RL baseline (Meander)": "0.043",
+  "RL baseline (R.-Select)": "0.018",
+  "GNN-PPO": "0.395",
+  "H-MARL": "0.378",
+  "GNN-PPO-det": "0.519",
+  "H-MARL-det": "0.510"
+ },
+ "right_components": {}
+}
