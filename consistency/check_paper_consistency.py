@@ -53,7 +53,6 @@ T3 = S['t3']['cells']; T5 = S['t5']['units']; T4 = S['t4']['units']; N = S['narr
 LEARNED = ['GNN-PPO', 'GNN-PPO-det', 'H-MARL', 'H-MARL-det']
 CONTRACTOR = ['RL baseline (B-line)', 'RL baseline (Meander)', 'RL baseline (R.-Select)']
 v9 = open(os.path.join(A.repo, 'report/phase5_report_cn_v9.md'), encoding='utf-8').read()
-mc4 = re.search(r'\|\s*CAGE4\s*\|\s*(\d+)-(\d+) 节点', v9)
 
 # ------------------------------------------------------------------ L1: Table 3
 print('L1 Table 3 (Cyberwheel RL evaluation)')
@@ -122,7 +121,7 @@ xrt = sum(T4[u]['episodes'] for u in T4 if u.startswith('CWX-RT')); xat = sum(T4
 t2 = N['t2']; matched = 0
 EXPECT = {('CW eval (RL / scripted)', -1): '%d / %d' % (t2['cw_eval_rl'], t2['cw_eval_art']), ('CW train / long', -1): '%d/%d (train); %d/%d (long)' % (rt, at, xrt, xat),
           ('CW sampled', -1): '%d' % t2['cw_sampled'], ('CW variants', -1): '%d' % t2['cw_variants'], ('CAGE4', -1): '%d' % t2['cage4'],
-          ('CW eval (RL / scripted)', 1): '10/25/50 h', ('CW variants', 4): '10{,}000 steps', ('CAGE4', 1): ('%s--%s h' % mc4.groups()) if mc4 else '92--101 h'}
+          ('CW eval (RL / scripted)', 1): '10/25/50 h', ('CW variants', 4): '10{,}000 steps', ('CAGE4', 1): '%d--%d h' % tuple(N['cage4_hosts'])}
 for row in rows_of(table_block('tab:setup')):
     c = cells(row)
     for (k0, idx), exp in EXPECT.items():
@@ -178,7 +177,9 @@ T('episodes per cell', '45 episodes per cell, 810 in total'); T('cross-arm episo
 T('ART episodes', '15 episodes per scale'); T('B1 train episodes', '300 arm-B1 episodes'); T('ART train episodes', '50 ART-defender episodes')
 W = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six'}
 T('subnets', 'across %s to %s subnets' % (W[min(N['cw_subnets'].values())], W[max(N['cw_subnets'].values())]))
-T('CAGE4 hosts', 'roughly %s--%s hosts across %s subnets' % (mc4.group(1), mc4.group(2), {9: 'nine', 8: 'eight', 10: 'ten'}.get(N['cage4_subnets'][0], str(N['cage4_subnets'][0]))))
+_w = {9: 'nine', 8: 'eight', 10: 'ten'}.get(N['cage4_subnets'][0], str(N['cage4_subnets'][0]))
+T('CAGE4 hosts', 'network of %d--%d hosts across %s subnets' % (tuple(N['cage4_hosts']) + (_w,)))
+chk('L3', N['cage4_topologies'] == 21 and N['cage4_subnets'] == [9], 'CAGE4 sidecars: %d topologies, subnet counts %s' % (N['cage4_topologies'], N['cage4_subnets']))
 T('CAGE4 episodes', 'evaluate 21 episodes from CAGE Challenge 4')
 T('grid', '231 admissible weightings'); T('gap', 'minimum between-group gap $%s$' % fmt(N['simplex_cage4']['min_gap'], 2)); T('tau', 'Kendall $\\tau \\geq %s$' % fmt(N['simplex_cage4']['min_tau'], 2))
 T('box', 'within $[0.15, 0.55]$'); T('flip', 'availability share $\\geq 0.6$'); T('H degenerate', '$H = 1.0$ under every weighting')
@@ -273,6 +274,17 @@ _third_top = {x for x in _top if x not in _std and x not in _local}; _third_opt 
 chk('L3', _third_top == {'yaml'} and _third_opt <= {'yaml', 'matplotlib', 'numpy'}, 'dependency claim (standard library + PyYAML; Matplotlib for charts) no longer matches the pipeline imports: %s / %s' % (_third_top, _third_opt))
 for _bad in ('no significant effect', 'core actions flagged', 'robust to small weight perturbations', '7-kill-chain', 'confirmed-metric dual reading', 'stops deploying decoys entirely', 'Both components are reward-shaped', 'drops at 50 hosts', 'preserves the comparative orderings', 'inflates individual readings', 'uses only the Python standard library', 'control- and value-type indicators are convention-sensitive', 'minimal disruption', 'distinct strike profiles everywhere', 'redirected toward real hosts', 'is a short Python program', 'decoy-strike share', 'realized impairment', 'do not depend on the weighting choice', 'no scalar score can surface', 'The official score', 'every red checkpoint with every blue checkpoint', 'byte-identical to its 1,000-step prefix', '$H = 1.000$ under'):
     chk('L3', _bad not in tex, 'stale wording still present: %r' % _bad)
+for _bad in ('92--101',):
+    chk('L3', _bad not in tex, 'stale wording still present: %r' % _bad)
+# reachability of the Data Availability link (informational only: network dependent, never fails the run)
+_m = re.search(r'\\url\{(https://github\.com/[^}]+)\}', tex)
+if _m:
+    try:
+        import urllib.request
+        _code = urllib.request.urlopen(urllib.request.Request(_m.group(1), headers={'User-Agent': 'consistency-check'}), timeout=20).status
+    except Exception as _e:
+        _code = getattr(_e, 'code', str(_e))
+    notes.append('Data Availability URL %s answers HTTP %s (200 expected once the repository is public)' % (_m.group(1), _code))
 T('contractor objective (abstract)', 'than those optimized for minimal attacker presence ($D = 0.018$--$0.049$')
 T('contractor objective (conclusion)', 'than those optimized for minimal attacker presence, and')
 T('contractor objective (5.3)', 'early termination under presence-minimizing rewards, long engagement tolerance under service-continuity rewards')
