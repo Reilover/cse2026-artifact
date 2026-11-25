@@ -1,4 +1,4 @@
-# Anonymous Evaluation Artifact
+# Evaluation Artifact: A Multi-Dimensional Assessment Method for Cyber-Defense Simulation Environments (CSE 2026)
 
 Self-contained evaluation package for two autonomous-cyber-defense (ACD) environments: CybORG CAGE Challenge 4 and Cyberwheel (CW). It contains the input episode corpora (including supplementary experiments), the assessment pipeline source code, and pre-computed results.
 
