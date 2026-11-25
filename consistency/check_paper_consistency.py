@@ -184,7 +184,7 @@ T('grid', '231 admissible weightings'); T('gap', 'minimum between-group gap $%s$
 T('box', 'within $[0.15, 0.55]$'); T('flip', 'availability share $\\geq 0.6$'); T('H degenerate', '$H = 1.000$')
 fl = N['flag']
 T('flag ART', 'is $%d\\%%$ for Cyberwheel ART' % int(fmt(fl['cw_art_eval'], 0)))
-T('flag CAGE4 contractor', '$%s$--$%s\\%%$ for the CAGE4 contractor-baseline episodes with scripted red' % rng(fl['cage4_contractor'], 0))
+T('flag CAGE4 contractor', '$%s$--$%s\\%%$ for the CAGE4 contractor episodes with scripted red' % rng(fl['cage4_contractor'], 0))
 T('flag CW RL', 'about $%s\\%%$ for Cyberwheel RL' % fmt(fl['cw_rl_eval'], 1))
 T('flag CAGE4 learned', '$%s$--$%s\\%%$ for the CAGE4 learned-defender episodes' % rng(fl['cage4_learned'], 0))
 sp = S['_spearman']; rho = sp['rho']
@@ -192,6 +192,13 @@ T('spearman recipe', 'all 810 episodes of the 54 arm--scale--seed--sync configur
 T('spearman median', 'median Spearman $\\rho = %s$ over the %d recomputable indicators' % (fmt(sp['median'], 2), sp['n_defined']))
 T('spearman composites', '$\\rho = %s$ for the concealment composite, $%s$ for $D$' % (fmt(rho['comprehensive_concealment_score'], 2), fmt(rho['d_score'], 2)))
 T('spearman sensitive', '$\\rho = %s$ for node control, $%s$ for control value' % (fmt(rho['node_control_rate'], 2), fmt(rho['control_value'], 2)))
+T('flag denominator', '(share of red actions except sleep and subnet scans flagged successful)')
+T('spearman conclusion', r'so all-action counting changes individual readings but leaves the damage-based patterns of Table~\ref{tab:results} intact: the 25-host peak everywhere and the arm ordering $B1 < A < B2$ at 50 hosts.')
+T('spearman recipe wording', r'), recomputed with the shipped pipeline from successful actions only, yields')
+T('weighting conclusion placement', r'under every weighting. The separations at issue are therefore not artifacts of the weighting choice. \emph{Action semantics}')
+ptn = N['patterns']
+chk('L3', ptn['all_action']['peak25']['d_score'] and ptn['success_only']['peak25']['d_score'] and ptn['success_only']['b1_lt_a_lt_b2_50h']['d_score'], 'patterns claimed as intact under success-only counting do not hold: %s' % ptn)
+chk('L3', not ptn['success_only']['b2_gt_b1']['d_score'] and not ptn['success_only']['peak25']['node_control_rate'], 'success-only patterns changed (B2>B1 or the node-control peak now holds): re-read the Spearman sentence')
 T('peak', 'peaks at the 25-host topology')
 b1r = rng([T3['B1|50host|%d' % y]['Damage']['mean'] for y in (0, 1)], 3); b2r = rng([T3['B2|50host|%d' % y]['Damage']['mean'] for y in (0, 1)], 3)
 T('B1 50h D', '($D = %s$--$%s$)' % b1r); T('B2 50h D', 'sustains $D = %s$--$%s$' % b2r)
@@ -199,8 +206,10 @@ ae = N['art_eval']
 T('ART eval', '$D = %s \\pm %s$ at 25 hosts (node control $%s$), versus $%s$ at 10 and $%s$ at 50 hosts' % (fmt(ae['25'], 3), fmt(ae['25_sd'], 3), fmt(ae['ctrl25'], 3), fmt(ae['10'], 3), fmt(ae['50'], 3)))
 T('ART loops', '$%s\\%%$ of ART' % fmt(N['art_loops_pct'], 1))
 dep = N['deploy_per_ep_sync_on']; T('deploy per episode', '(%s--%s per episode)' % (fmt(min(dep), 0), fmt(max(dep), 0)))
-T('strike B1 text', '$%s$--$%s\\%%$ of core attacks under B1, dropping to $%s$--$%s\\%%$ under B2' % (sb1 + sb2))
-T('sync-off A', 'Across all 45 sync-off arm-A episodes the defender deploys zero decoys')
+T('strike B1 text', '$%s$--$%s\\%%$ of core attacks (exploitation, lateral movement, privilege escalation, impact) under B1, dropping to $%s$--$%s\\%%$ under B2' % (sb1 + sb2))
+so = N['sync_off_A']
+T('sync-off A', 'Across all %d sync-off arm-A episodes the defender deploys zero decoys' % so['episodes'])
+chk('L3', so['episodes'] == 3 * 45 and so['decoy_records'] == 0, 'sync-off arm-A episodes / decoy records from the manifests: %s' % so)
 ca = N['crossarm']
 T('cross-arm ranges', 'column range up to $%s$ in $D$ vs.\\ row range $%s$' % (fmt(ca['col_range_red'], 3), fmt(ca['row_range_blue'], 3)))
 T('cross-arm diag', '$D = %s$ off-diagonal vs.\\ $%s$ on' % (fmt(ca['offdiag'], 3), fmt(ca['diag'], 3)))
@@ -223,8 +232,12 @@ T('absorb', '$%s\\%%$ to $%s\\%%$ of attack steps land on decoys' % (fmt(float(P
 T('conceal per-episode', '$%s$--$%s$ across episodes' % rng([e['comprehensive_concealment_score'] for x in LEARNED for e in E[x]['eps']], 3))
 T('paired pct', '$%s\\%%$ (GNN-PPO) and $%s\\%%$ (H-MARL)' % (fmt(P['GNN'], 1), fmt(P['HMARL'], 1)))
 T('paired consistent', 'consistent in 45/45 paired episodes'); T('resamples', '20{,}000 resamples'); T('p', '$p < 0.001$')
-T('det effects', '($-%s\\%%$, $-%s\\%%$)' % (fmt(P['GNN-Det']['pct'], 1), fmt(P['HMARL-Det']['pct'], 1)))
-T('decoys paired', '$%s$ vs.\\ $%s$ hosts per episode' % tuple(P['decoy_det_per_ep']))
+def psig(p): return '$p < 0.001$' if p < 0.001 else '$p < 0.01$' if p < 0.01 else '$p < 0.05$' if p < 0.05 else 'not significant'
+T('det effects', 'under deterministic policies the effect attenuates ($-%s\\%%$ for H-MARL-det, $%d/%d$ consistent, %s; $-%s\\%%$ for GNN-PPO-det, %s)' % (fmt(P['HMARL-Det']['pct'], 1), P['HMARL-Det']['consistent'], P['HMARL-Det']['n'], psig(P['HMARL-Det']['p_holm']), fmt(P['GNN-Det']['pct'], 1), psig(P['GNN-Det']['p_holm'])))
+T('abstract det variants', '(deterministic variants: $-%s\\%%$ and $-%s\\%%$)' % (fmt(P['HMARL-Det']['pct'], 1), fmt(P['GNN-Det']['pct'], 1)))
+T('det decoys', 'GNN-PPO-det deploys roughly six times fewer decoys than its sampled counterpart ($%s$ vs.\\ $%s$ per episode)' % tuple(P['decoy_det_per_ep']))
+chk('L3', 5.5 <= float(P['decoy_det_per_ep'][1]) / float(P['decoy_det_per_ep'][0]) < 6.5, 'paired experiment decoy ratio is not about six: %s' % P['decoy_det_per_ep'])
+T('decoys paired', '$%s$ vs.\\ $%s$ per episode' % tuple(P['decoy_det_per_ep']))
 sr = N['same_red']; srl = rng(sr['learned'], 3); src = rng(sr['contractor'], 3)
 T('same-red rollouts', '(%d rollouts,' % sr['rollouts']); T('same-red text', 'to $%s$--$%s$, while the heavily deploying GNN-PPO/H-MARL variants accept $%s$--$%s$' % (src + srl)); T('same-red price', '($%s$--$%s$ vs.\\ $%s$--$%s$)' % (srl + src))
 T('cut+damage', 'the $%s$--$%s\\%%$ engagement cut at sustained real-host damage ($%s$--$%s$ vs.\\ $%s$--$%s$ at 50 hosts)' % (cut() + b2r + b1r))
@@ -239,6 +252,23 @@ T('conceal gap', '($%s$--$%s$ vs.\\ $%s$--$%s$)' % (rng([T5[x]['comprehensive_co
 T('paired lower', 'damage $%s$--$%s\\%%$ lower with decoys on' % rng([P['GNN'], P['HMARL']], 0))
 T('further cut', '(a further $%s$--$%s\\%%$ cut, redirected toward real hosts on two of three topologies)' % cut())
 T('cross-arm strike', '(red-B1 up to $%s\\%%$; red-A $%s\\%%$' % (fmt(ca['strike_max']['B1'] * 100, 1), fmt(ca['strike_max']['A'] * 100, 1)))
+T('kill chain', 'projecting the kill-chain stages of Hutchins et al.')
+T('distinct quantities', 'only the first duplicates a quantity, so the system covers 20 distinct quantities')
+T('supplements', 'Two supplements probe robustness: a sampled-action variant of the arm-A red agent ($%d$ episodes) and %s parameter variants of the ART script against arm~B1.' % (t2['cw_sampled'], 'ten' if t2['cw_variants'] == 10 else str(t2['cw_variants'])))
+T('antecedent', 'Both the spread and the horizon gap are reward-shaped---they read out')
+T('peak wording', 'falls below it at 50 hosts')
+T('limitation term', r'the all-action versus success-only comparison (Section~\ref{sec:setup}) is run only on the Cyberwheel corpus')
+T('dependencies', 'a short Python program (standard library plus PyYAML; Matplotlib only for the optional charts) and is deterministic')
+_wsrc = os.path.join(A.repo, 'wxpgzs_src'); _std = set(sys.stdlib_module_names); _top = set(); _opt = set()
+_local = {os.path.splitext(f)[0] for f in os.listdir(_wsrc) if f.endswith('.py')}
+for _fn in sorted(f for f in os.listdir(_wsrc) if f.endswith('.py')):
+    for _l in open(os.path.join(_wsrc, _fn), encoding='utf-8'):
+        _m = re.match(r'^(\s*)(?:import|from)\s+([A-Za-z_]\w*)', _l)
+        if _m: (_opt if _m.group(1) else _top).add(_m.group(2))
+_third_top = {x for x in _top if x not in _std and x not in _local}; _third_opt = {x for x in _opt if x not in _std and x not in _local}
+chk('L3', _third_top == {'yaml'} and _third_opt <= {'yaml', 'matplotlib', 'numpy'}, 'dependency claim (standard library + PyYAML; Matplotlib for charts) no longer matches the pipeline imports: %s / %s' % (_third_top, _third_opt))
+for _bad in ('no significant effect', 'core actions flagged', 'robust to small weight perturbations', '7-kill-chain', 'confirmed-metric dual reading', 'stops deploying decoys entirely', 'Both components are reward-shaped', 'drops at 50 hosts', 'preserves the comparative orderings', 'inflates individual readings', 'uses only the Python standard library'):
+    chk('L3', _bad not in tex, 'stale wording still present: %r' % _bad)
 missing = [(l, s) for l, s in trip if s not in tex]
 for l, s in missing: chk('L3', False, 'tripwire "%s" not found: %s' % (l, s))
 ok['L3'] += len(trip) - len(missing)

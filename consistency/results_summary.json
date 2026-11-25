@@ -1,7 +1,7 @@
 {
  "_meta": {
   "repo": "/home/kali/Mypaper/cse2026/anon_repo_v2",
-  "generated": "2026-11-25 12:11:49",
+  "generated": "2026-11-25 13:03:40",
   "pipeline": true,
   "t3_episodes": 810
  },
@@ -18258,6 +18258,63 @@
    "d_score": 0.8693895444602487
   }
  },
+ "_patterns": {
+  "source": "cell means over 45 episodes under both counting conventions (all_action = Table 3; success_only = failed red actions blanked)",
+  "all_action": {
+   "peak25": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": true
+   },
+   "b2_gt_b1": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": true
+   },
+   "b1_lt_a_lt_b2_50h": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": true
+   },
+   "a_gt_b2_10h": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": true
+   },
+   "b2_on_gt_off": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": true
+   }
+  },
+  "success_only": {
+   "peak25": {
+    "d_score": true,
+    "node_control_rate": false,
+    "node_detect_rate": true
+   },
+   "b2_gt_b1": {
+    "d_score": false,
+    "node_control_rate": false,
+    "node_detect_rate": false
+   },
+   "b1_lt_a_lt_b2_50h": {
+    "d_score": true,
+    "node_control_rate": false,
+    "node_detect_rate": false
+   },
+   "a_gt_b2_10h": {
+    "d_score": true,
+    "node_control_rate": true,
+    "node_detect_rate": false
+   },
+   "b2_on_gt_off": {
+    "d_score": false,
+    "node_control_rate": false,
+    "node_detect_rate": true
+   }
+  }
+ },
  "t5": {
   "source": "results/cage4_pipeline_fixed/*/ep_*/metrics_table.csv last row (3 episodes per configuration, mean +- sample std); Steps = mean count of red_action != sleep in inputs/cage4/ep_*.csv (rounded)",
   "units": {
@@ -19539,6 +19596,8 @@
    "crossarm": "supplement_experiments_backup/cross_arm/per_episode.csv (45 episodes)",
    "art_loops": "results/cw_deep_dive/corpus_quality.csv",
    "flag": "raw inputs: share of red actions (excluding sleep/nothing and subnet scans) whose success flag is TRUE, pooled over the corpus",
+   "flag_core": "raw inputs: the same success-flag rate restricted to the md core attacks (exploit / lateral-movement / privilege-escalation / impact); recorded to show that the paper does NOT use this denominator",
+   "sync_off_A": "inputs/cw/cw_r_eval_A_*_sync0_*.csv.decoys.json (per-episode decoy manifests; three scales x 45 episodes)",
    "topology": "inputs/cage4/*.topology.yaml meta.node_count/subnet_count; inputs/cw/topology_*.yaml subnets section",
    "t2": "inputs/cw and inputs/cage4 file/episode counts; training-corpus episode counts (300 per scale B1, 50 per scale ART, 10/5 long-horizon) from v9 section 3.1 (md source; only ep001 of each training run is shipped)",
    "fig2": "results/cw_deep_dive/train_curves.csv (3-seed means, 100 episodes per scale)"
@@ -19705,6 +19764,77 @@
     90.9090909090909,
     90.0990099009901
    ]
+  },
+  "flag_core": {
+   "cw_rl_eval": 9.336471643129343,
+   "cage4_learned": [
+    31.50074294205052,
+    22.30869001297017,
+    27.32474964234621,
+    27.848101265822784
+   ]
+  },
+  "sync_off_A": {
+   "files": 45,
+   "episodes": 135,
+   "decoy_records": 0
+  },
+  "patterns": {
+   "source": "cell means over 45 episodes under both counting conventions (all_action = Table 3; success_only = failed red actions blanked)",
+   "all_action": {
+    "peak25": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": true
+    },
+    "b2_gt_b1": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": true
+    },
+    "b1_lt_a_lt_b2_50h": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": true
+    },
+    "a_gt_b2_10h": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": true
+    },
+    "b2_on_gt_off": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": true
+    }
+   },
+   "success_only": {
+    "peak25": {
+     "d_score": true,
+     "node_control_rate": false,
+     "node_detect_rate": true
+    },
+    "b2_gt_b1": {
+     "d_score": false,
+     "node_control_rate": false,
+     "node_detect_rate": false
+    },
+    "b1_lt_a_lt_b2_50h": {
+     "d_score": true,
+     "node_control_rate": false,
+     "node_detect_rate": false
+    },
+    "a_gt_b2_10h": {
+     "d_score": true,
+     "node_control_rate": true,
+     "node_detect_rate": false
+    },
+    "b2_on_gt_off": {
+     "d_score": false,
+     "node_control_rate": false,
+     "node_detect_rate": true
+    }
+   }
   },
   "t2": {
    "cw_eval_rl": 810,

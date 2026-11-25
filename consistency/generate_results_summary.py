@@ -167,6 +167,19 @@ if USE_PIPELINE:
     summary['_spearman'] = {'source': 'shipped pipeline, all 810 RL eval episodes (15 per configuration x 54 arm-scale-trainseed-sync configurations), all-action vs success-only (failed red actions blanked)', 'configs': 54,
                             'undefined': sorted(k for k, v in rho.items() if v is None), 'n_defined': len(defined), 'median': mean(sorted(defined.values())[len(defined) // 2 - 1:len(defined) // 2 + 1]) if len(defined) % 2 == 0 else st.median(defined.values()),
                             'rho': {k: v for k, v in rho.items()}}
+    # --- which structural patterns of Table 3 survive the counting convention (the paper may only claim those that do)
+    def _cm(d, a, sz, sy, c):
+        v = [float(d[k][c]) for k in d if k.split('|')[0] == a and k.split('|')[1] == sz and k.split('|')[3] == str(sy)]
+        assert len(v) == 45, (a, sz, sy, len(v)); return mean(v)
+    _C3 = ('d_score', 'node_control_rate', 'node_detect_rate'); _A3 = ('A', 'B1', 'B2'); _S3 = ('10host', '25host', '50host')
+    summary['_patterns'] = {'source': 'cell means over 45 episodes under both counting conventions (all_action = Table 3; success_only = failed red actions blanked)'}
+    for _n, _d in (('all_action', raw), ('success_only', raw_ok)):
+        summary['_patterns'][_n] = {
+            'peak25': {c: all(_cm(_d, a, '25host', sy, c) > max(_cm(_d, a, '10host', sy, c), _cm(_d, a, '50host', sy, c)) for a in _A3 for sy in (0, 1)) for c in _C3},
+            'b2_gt_b1': {c: all(_cm(_d, 'B2', sz, sy, c) > _cm(_d, 'B1', sz, sy, c) for sz in _S3 for sy in (0, 1)) for c in _C3},
+            'b1_lt_a_lt_b2_50h': {c: all(_cm(_d, 'B1', '50host', sy, c) < _cm(_d, 'A', '50host', sy, c) < _cm(_d, 'B2', '50host', sy, c) for sy in (0, 1)) for c in _C3},
+            'a_gt_b2_10h': {c: all(_cm(_d, 'A', '10host', sy, c) > _cm(_d, 'B2', '10host', sy, c) for sy in (0, 1)) for c in _C3},
+            'b2_on_gt_off': {c: all(_cm(_d, 'B2', sz, 1, c) > _cm(_d, 'B2', sz, 0, c) for sz in _S3) for c in _C3}}
 
 # ----------------------------------------------------------------------------- T5 (CAGE4)
 UNITS = [('GNN-PPO', 'C4-GNN/ep_cage4_gnn_ppo_eval', 'gnn_ppo_eval'), ('GNN-PPO-det', 'C4-GNN-Det/ep_cage4_gnn_ppo_det_eval', 'gnn_ppo_det_eval'),
@@ -299,6 +312,30 @@ N['flag'] = {'cw_art_eval': flag_rate(sorted(glob.glob(os.path.join(REPO, 'input
              'cage4_learned': [flag_rate(sorted(glob.glob(os.path.join(REPO, f'inputs/cage4/ep_cage4_{i}_ep00*.csv'))), 'red_action', 'red_action_success') for _, _, i in UNITS[:4]],
              'cage4_contractor': [flag_rate(sorted(glob.glob(os.path.join(REPO, f'inputs/cage4/ep_cage4_{i}_ep00*.csv'))), 'red_action', 'red_action_success') for _, _, i in UNITS[4:]]}
 N['sources']['flag'] = 'raw inputs: share of red actions (excluding sleep/nothing and subnet scans) whose success flag is TRUE, pooled over the corpus'
+# same flag rate restricted to the md definition of core attacks (exploit / lateral-movement / privilege-escalation / impact); record only, not cited
+CORE = {'exploit_remote_system', 'lateral-movement', 'privilege_escalate', 'impact', 'exploit_remote_service', 'privilege_escalate'}
+def core_rate(files, act, suc):
+    tot = ok = 0
+    for f in files:
+        for r in read_csv(f):
+            if (r.get(act) or '') not in CORE: continue
+            tot += 1; ok += str(r.get(suc)).strip().lower() == 'true'
+    return ok / tot * 100 if tot else None
+N['flag_core'] = {'cw_rl_eval': core_rate(sorted(glob.glob(os.path.join(REPO, 'inputs/cw/cw_r_eval_[AB]*_s[123]_sync[01]_s[1-5].csv'))), 'red_action_name', 'red_action_success'),
+                  'cage4_learned': [core_rate(sorted(glob.glob(os.path.join(REPO, f'inputs/cage4/ep_cage4_{i}_ep00*.csv'))), 'red_action', 'red_action_success') for _, _, i in UNITS[:4]]}
+N['sources']['flag_core'] = 'raw inputs: the same success-flag rate restricted to the md core attacks (exploit / lateral-movement / privilege-escalation / impact); recorded to show that the paper does NOT use this denominator'
+# arm-A sync-off evaluation: episodes and decoy records counted from the per-episode manifests (sanity: the same count on sync-on B1/B2 manifests must be > 0)
+def manifest_decoys(pattern):
+    files = sorted(glob.glob(os.path.join(REPO, pattern))); eps = rec = 0
+    for f in files:
+        d = json.load(open(f)); eps += len(d['episodes'])
+        rec += sum(len(e.get('decoys') or []) for e in d['episodes'].values())
+    return {'files': len(files), 'episodes': eps, 'decoy_records': rec}
+N['sync_off_A'] = manifest_decoys('inputs/cw/cw_r_eval_A_*_sync0_*.csv.decoys.json')
+_chk_on = manifest_decoys('inputs/cw/cw_r_eval_B[12]_*_sync1_*.csv.decoys.json')
+assert N['sync_off_A']['decoy_records'] == 0 and _chk_on['decoy_records'] > 0 and N['sync_off_A']['episodes'] == 3 * 45, (N['sync_off_A'], _chk_on)
+N['sources']['sync_off_A'] = 'inputs/cw/cw_r_eval_A_*_sync0_*.csv.decoys.json (per-episode decoy manifests; three scales x 45 episodes)'
+if USE_PIPELINE: N['patterns'] = summary['_patterns']
 # Table 2 counts
 def count_eps(pattern):
     n = 0
@@ -409,6 +446,7 @@ for k, v in N.items():
 if summary['_spearman']:
     L.append('- spearman (undefined: %s): %s' % (summary['_spearman']['undefined'], json.dumps({k: (round(v, 3) if v is not None else None) for k, v in summary['_spearman']['rho'].items()})))
     L.append('- spearman median: %.3f over %d indicators' % (summary['_spearman']['median'], summary['_spearman']['n_defined']))
+if summary.get('_patterns'): L.append('- table-3 structural patterns under both counting conventions: %s' % json.dumps(summary['_patterns']))
 L.append('')
 L.append('## Sources')
 for k, v in N['sources'].items(): L.append('- %s: %s' % (k, v))

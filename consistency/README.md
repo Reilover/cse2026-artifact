@@ -42,3 +42,23 @@ cells reproduce the v9 report, section 3.1, to the report's four decimals. `resu
 is an earlier export (2026-09-17, before the honeypot-denominator fix of 2026-09-21): it agrees for arm A
 (no decoys) and differs for the decoy-deploying arms B1/B2 (damage +0.001 to +0.016), so it documents the
 deep-dive analyses of the report and is not the source of that table.
+
+## What the checker verifies beyond the table cells
+
+- **Counts come from the artifact, never from the paper.** The number of sync-off arm-A evaluation episodes
+  (135 = three scales x 45) and its zero decoy records are counted from the per-episode manifests
+  (`inputs/cw/cw_r_eval_A_*_sync0_*.csv.decoys.json`).
+- **A conclusion must match the report row it cites.** For the paired experiment the checker regenerates the
+  significance wording from the report (`H-MARL-det`: -8.8 %, 39/45 consistent, p < 0.001; `GNN-PPO-det`: -1.6 %,
+  not significant), so the paper cannot call both deterministic variants non-significant.
+- **Only orderings that survive are claimed.** `results_summary.json` records, for both counting conventions
+  (all actions vs successful actions only), which structural patterns of the RL-evaluation table hold
+  (25-host peak, B2 > B1, B1 < A < B2 at 50 hosts). The rank-sensitivity sentence in the paper names only the
+  damage-based patterns that survive success-only counting.
+- **Denominators are stated.** The success-flag rate quoted in the paper is the share of red actions other than
+  sleep and subnet scans; the same rate restricted to the report's core attacks
+  (exploit / lateral-movement / privilege-escalation / impact) is stored under `flag_core` for the record and is
+  not the number the paper quotes.
+- **Dependency claim.** The checker parses the module-level imports of `wxpgzs_src` and requires the only
+  third-party one to be `yaml`, matching the sentence in the paper (Matplotlib and NumPy are used only for charts).
+- **Stale-wording sweep.** Eleven phrasings removed by earlier revisions are asserted absent.
