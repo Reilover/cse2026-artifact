@@ -260,7 +260,12 @@ T('cross-arm strike', 'carry their strike rates across blue partners (share of a
 T('kill chain', 'projecting the kill-chain stages of Hutchins et al.')
 T('distinct quantities', 'only the first duplicates a quantity, so the system covers 20 distinct quantities')
 T('supplementary corpora', 'A sampled-action variant of the arm-A red agent adds five episodes.'); T('ART variants', 'in ten script variants, against arm~B1.')
-T('antecedent', 'Both the spread and the horizon gap are reward-shaped---they read out')
+T('antecedent', 'Both the spread and the horizon gap are reward-shaped: early termination under presence-minimizing rewards, long engagement tolerance under service-continuity rewards')
+# audit 48: the visible LNCS template settings must stay restored (class caption style, no page enlargement, no old-class incompatibility)
+for _bad in ('\\usepackage{caption}', '\\captionsetup', '\\usepackage{subcaption}', '\\enlargethispage'):
+    chk('L3', _bad not in tex, 'template deviation re-introduced: %r (llncsdoc 2.1: caption style and printing area are set by the class)' % _bad)
+chk('L3', tex.count('\\@ifundefined{credits}') == 1 and tex.index('\\@ifundefined{credits}') < tex.index('\\begin{document}'), 'llncs.cls < v2.23 compatibility block missing from the preamble')
+chk('L3', re.search(r'\\documentclass\[runningheads,a4paper\]\{llncs\}', tex) is not None, 'documentclass line must read \\documentclass[runningheads,a4paper]{llncs} (CSE 2026 template note)')
 T('peak wording', 'falls below it at 50 hosts')
 T('limitation term', r'the all-action versus success-only comparison (Section~\ref{sec:setup}) is run only on the Cyberwheel corpus')
 T('dependencies', 'needs only the standard library plus PyYAML (Matplotlib only for the optional charts) and is deterministic')
