@@ -173,7 +173,7 @@ T('abstract D contractor', '($D = %s$--$%s$; about $10\\times$ under a common ho
 sb1 = rng(list(N['strike_b1'].values()), 1); sb2 = rng(list(N['strike_b2'].values()), 1)
 T('abstract strike B1', '$%s$--$%s\\%%$ of core attacks' % sb1); T('abstract strike B2', 'cuts this to $%s$--$%s\\%%$' % sb2)
 T('abstract paired', 'red-agent damage is $%s$--$%s\\%%$ lower in 45/45 paired sampled-action episodes' % rng([N['paired']['GNN'], N['paired']['HMARL']], 0))
-T('episodes per cell', 'yields 45 episodes per cell and 810 episodes in total'); T('cross-arm episodes', 'under sync-on (45 episodes)')
+T('episodes per cell', 'i.e., 45 episodes per arm--scale--sync cell and 810 in total'); T('cross-arm episodes', 'under sync-on (45 episodes)')
 T('ART episodes', '15 episodes per scale'); T('B1 train episodes', '300 arm-B1 episodes'); T('ART train episodes', '50 ART-defender episodes')
 W = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six'}
 T('subnets', 'across %s to %s subnets' % (W[min(N['cw_subnets'].values())], W[max(N['cw_subnets'].values())]))
@@ -219,7 +219,7 @@ T('cross-arm ranges', 'column range up to $%s$ in $D$ vs.\\ row range $%s$' % (f
 T('cross-arm diag', '$D = %s$ off-diagonal vs.\\ $%s$ on' % (fmt(ca['offdiag'], 3), fmt(ca['diag'], 3)))
 T('train D', '$D = %s$, $%s$, $%s$ across scales' % tuple(T4['CW-RT%shost' % h]['_md3']['D'] for h in (10, 25, 50)))
 T('long D', 'reaches $D = %s$ with full node control' % fmt(T4['CWX-RT25host']['_nums'][0][0], 3))
-T('stepsens design', '72 paired rollouts at 100/500/1{,}000 steps'); T('stepsens positive', '%d/36 paired cells' % N['stepsens']['n_pos'])
+T('stepsens design', '72 paired rollouts at 100/500/1{,}000 steps'); T('stepsens positive', '%d/36 cells' % N['stepsens']['n_pos'])
 T('conceal collapse', '$%s \\to %s$' % (fmt(T4['CW-AT25host']['_nums'][6][0], 3), fmt(T4['CWX-AT25host']['_nums'][6][0], 3)))
 a1000 = N['stepsens']['arms1000']; T('stepsens convergence', 'within $%s$ in $D$ at 50 hosts' % fmt(max(a1000) - min(a1000), 3))
 T('collapse episodes', 'by episodes 14--22'); T('fig2 caption', 'abandons deployment by episodes 14--22')
@@ -233,7 +233,7 @@ T('DC range', '$DC = %s$--$%s$' % rng([T5[x]['dc_score']['mean'] for x in LEARNE
 T('decoys', '${\\sim}%d$ decoy hosts' % int(fmt(mean(N['decoys_per_ep']['GNN-PPO']), 0)))
 P = N['paired']
 T('absorb', '$%s\\%%$ to $%s\\%%$ of attack steps landing on decoys' % (fmt(float(P['absorb_lo']), 1), fmt(float(P['absorb_hi']), 1)))
-T('conceal per-episode', '$%s$--$%s$ across episodes' % rng([e['comprehensive_concealment_score'] for x in LEARNED for e in E[x]['eps']], 3))
+T('conceal per-episode', '$%s$--$%s$ (per-episode range)' % rng([e['comprehensive_concealment_score'] for x in LEARNED for e in E[x]['eps']], 3))
 T('paired pct', '$%s\\%%$ (GNN-PPO) and $%s\\%%$ (H-MARL)' % (fmt(P['GNN'], 1), fmt(P['HMARL'], 1)))
 T('paired consistent', 'consistent in 45/45 episode pairs per variant'); T('resamples', '20{,}000 resamples'); T('p', '$p < 0.001$')
 def psig(p): return '$p < 0.001$' if p < 0.001 else '$p < 0.01$' if p < 0.01 else '$p < 0.05$' if p < 0.05 else 'not significant'
@@ -243,7 +243,7 @@ T('det decoys', 'GNN-PPO-det deploys roughly six times fewer decoys than its sam
 chk('L3', 5.5 <= float(P['decoy_det_per_ep'][1]) / float(P['decoy_det_per_ep'][0]) < 6.5, 'paired experiment decoy ratio is not about six: %s' % P['decoy_det_per_ep'])
 T('decoys paired', '$%s$ vs.\\ $%s$ per episode' % tuple(P['decoy_det_per_ep']))
 sr = N['same_red']; srl = rng(sr['learned'], 3); src = rng(sr['contractor'], 3)
-T('same-red rollouts', '(%d rollouts,' % sr['rollouts']); T('same-red text', 'to $%s$--$%s$, while the heavily deploying GNN-PPO/H-MARL variants accept $%s$--$%s$' % (src + srl)); T('same-red price', '($%s$--$%s$ vs.\\ $%s$--$%s$)' % (srl + src))
+T('same-red rollouts', '(%d rollouts:' % sr['rollouts']); T('same-red text', 'to $%s$--$%s$, while the heavily deploying GNN-PPO/H-MARL variants accept $%s$--$%s$' % (src + srl)); T('same-red price', '($%s$--$%s$ vs.\\ $%s$--$%s$)' % (srl + src))
 T('cut+damage', 'the $%s$--$%s\\%%$ engagement cut at sustained real-host damage ($%s$--$%s$ vs.\\ $%s$--$%s$ at 50 hosts)' % (cut() + b2r + b1r))
 off = N['official']
 def _k(x): return format(round(abs(x)), ',').replace(',', '{,}')
@@ -259,7 +259,7 @@ T('further cut', '(a further $%s$--$%s\\%%$ cut, with a significant shift toward
 T('cross-arm strike', 'carry their strike rates across blue partners (share of all logged steps, five episodes per pair: red-B1 $%s$--$%s\\%%$; red-A $%s\\%%$' % (fmt(ca['strike_b1_range'][0] * 100, 1), fmt(ca['strike_b1_range'][1] * 100, 1), fmt(ca['strike_max']['A'] * 100, 1)))
 T('kill chain', 'projecting the kill-chain stages of Hutchins et al.')
 T('distinct quantities', 'only the first duplicates a quantity, so the system covers 20 distinct quantities')
-T('supplementary corpora', 'A sampled-action variant of the arm-A red agent adds five episodes.'); T('ART variants', 'In ten script variants, the ART agent is also evaluated against arm~B1.')
+T('supplementary corpora', 'A sampled-action variant of the arm-A red agent adds five episodes.'); T('ART variants', 'and, in ten script variants, against arm~B1.')
 T('antecedent', 'Both the spread and the horizon gap are reward-shaped: early termination under presence-minimizing rewards, long engagement tolerance under service-continuity rewards')
 # audit 48: the visible LNCS template settings must stay restored (class caption style, no page enlargement, no old-class incompatibility)
 for _bad in ('\\usepackage{caption}', '\\captionsetup', '\\usepackage{subcaption}', '\\enlargethispage'):
@@ -301,7 +301,12 @@ T('contractor objective (conclusion)', 'than those optimized for minimal attacke
 T('contractor objective (5.3)', 'early termination under presence-minimizing rewards, long engagement tolerance under service-continuity rewards')
 T('contractor objective (intro)', 'aggressive decoy deployment under one reward, minimal attacker presence under another')
 T('sync-on deployment arms', 'Under sync-on, the connected arms B1/B2 deploy decoys')
-T('ART attribution', 'Its decoy engagement also demands careful attribution')
+T('ART attribution', 'In the ART training units of Table~\\ref{tab:cwtrain}, its decoy engagement also demands careful attribution')
+# audit 50: run-in headings once lost by a sentence-level rewrite (the index had merged them into the first sentence) -- guard them
+T('run-in decoy', '\\textit{Decoy engagement reflects the reward configuration on both sides.}')
+T('run-in Q1', "\\textit{Q1: Can the indicator profile audit an environment's scalar reward?}")
+T('run-in Q2', '\\textit{Q2: Is decoy engagement a property of the policy or of the reward configuration?}')
+T('run-in Q3', "\\textit{Q3: Do the environment's simulation mechanisms causally shape training outcomes, and does the assessment transfer?}")
 T('CIA wording', 'The three CIA components each track impairment-related activity, but')
 T('weighting claim (4.1)', 'the configuration separations are robust to the weighting choice')
 T('H precision', 'sit at the degenerate $H = 1.0$ under every weighting.')
