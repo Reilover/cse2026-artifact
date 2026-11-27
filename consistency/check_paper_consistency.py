@@ -267,7 +267,9 @@ for _bad in ('\\usepackage{caption}', '\\captionsetup', '\\usepackage{subcaption
 chk('L3', tex.count('\\@ifundefined{credits}') == 1 and tex.index('\\@ifundefined{credits}') < tex.index('\\begin{document}'), 'llncs.cls < v2.23 compatibility block missing from the preamble')
 chk('L3', re.search(r'\\documentclass\[runningheads,a4paper\]\{llncs\}', tex) is not None, 'documentclass line must read \\documentclass[runningheads,a4paper]{llncs} (CSE 2026 template note)')
 T('peak wording', 'falls below it at 50 hosts')
-T('limitation term', r'the all-action versus success-only comparison (Section~\ref{sec:setup}) is run only on the Cyberwheel corpus')
+T('limitation term', r'the all-action versus success-only comparison is run only on the Cyberwheel corpus')
+# audit 49: the author removed all section cross-references as redundant (2026-11-25); do not let them creep back
+chk('L3', not re.search(r'\\ref\{sec:', tex) and not re.search(r'(?<![A-Za-z{])Sections?~?\s*\d+(\.\d+)?\b', re.sub(r'(?<!\\)%.*$', '', tex, flags=re.M)), 'section cross-references re-introduced (author removed them as redundant)')
 T('dependencies', 'needs only the standard library plus PyYAML (Matplotlib only for the optional charts) and is deterministic')
 _wsrc = os.path.join(A.repo, 'wxpgzs_src'); _std = set(sys.stdlib_module_names); _top = set(); _opt = set()
 _local = {os.path.splitext(f)[0] for f in os.listdir(_wsrc) if f.endswith('.py')}
