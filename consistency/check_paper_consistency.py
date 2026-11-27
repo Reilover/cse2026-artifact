@@ -146,7 +146,7 @@ print('  rows %d | indicators %d | bold %d' % (len(cats), len(names), len(bold))
 print('L2 figures')
 def norm(s): return re.sub(r'\s+', ' ', s.replace('\\\\', ' ').replace('~', ' ').replace('\\%', '%')).strip().lower()
 tikz = norm(open(os.path.join(A.figdir, 'fig_hierarchy.tex'), encoding='utf-8').read())
-ALIAS = {'Comprehensive Concealment': 'Concealment\\\\Composite $H$', 'Comprehensive Damage': 'Damage\\\\Composite $D$'}
+ALIAS = {}   # audit51: Fig. 1 now carries the Table-1 names verbatim (the former 'Concealment\\Composite $H$' alias is gone)
 miss = [x for x in names + cats if norm(ALIAS.get(x, x)) not in tikz]
 chk('L2', not miss, 'Fig. 1 TikZ source is missing Table-1 names: %s' % miss)
 f2 = N['fig2']
@@ -232,7 +232,7 @@ T('80-step', '$D = %s$--$%s$ versus $%s$--$%s$' % (rng(d80l, 2) + rng(d80c, 3)))
 T('DC range', '$DC = %s$--$%s$' % rng([T5[x]['dc_score']['mean'] for x in LEARNED], 3)); T('DA range', '$DA = %s$--$%s$' % rng([T5[x]['da_score']['mean'] for x in LEARNED], 3))
 T('decoys', '${\\sim}%d$ decoy hosts' % int(fmt(mean(N['decoys_per_ep']['GNN-PPO']), 0)))
 P = N['paired']
-T('absorb', '$%s\\%%$ to $%s\\%%$ of attack steps landing on decoys' % (fmt(float(P['absorb_lo']), 1), fmt(float(P['absorb_hi']), 1)))
+T('absorb', '$%s$--$%s\\%%$ of attack steps landing on decoys' % (fmt(float(P['absorb_lo']), 1), fmt(float(P['absorb_hi']), 1)))
 T('conceal per-episode', '$%s$--$%s$ (per-episode range)' % rng([e['comprehensive_concealment_score'] for x in LEARNED for e in E[x]['eps']], 3))
 T('paired pct', '$%s\\%%$ (GNN-PPO) and $%s\\%%$ (H-MARL)' % (fmt(P['GNN'], 1), fmt(P['HMARL'], 1)))
 T('paired consistent', 'consistent in 45/45 episode pairs per variant'); T('resamples', '20{,}000 resamples'); T('p', '$p < 0.001$')
